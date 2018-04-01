@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygccxml.declarations.filtering'.filtering</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygccxml-module.html">Package&nbsp;pygccxml</a> ::
+        <a href="pygccxml.declarations-module.html">Package&nbsp;declarations</a> ::
+        <a href="pygccxml.declarations.filtering%27-module.html">Module&nbsp;filtering'</a> ::
+        Class&nbsp;filtering
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASSTYPE DESCRIPTION ==================== -->
+<h1 class="epydoc">ClassType filtering</h1><p class="nomargin-top"><span class="codelink"><a href="pygccxml.declarations.filtering%27-pysrc.html#filtering">source&nbsp;code</a></span></p>
+<p>deprecated!</p>
+  <p>defines few algorithms for filtering declarations</p>
+
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Static Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygccxml.declarations.filtering%27.filtering-class.html#by_location" class="summary-sig-name">by_location</a>(<span class="summary-sig-arg">decls</span>,
+        <span class="summary-sig-arg">locations</span>)</span><br />
+      returns list of declarations that belongs to specified locations.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.filtering%27-pysrc.html#filtering.by_location">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="contains_parent_dir"></a><span class="summary-sig-name">contains_parent_dir</span>(<span class="summary-sig-arg">fpath</span>,
+        <span class="summary-sig-arg">dirs</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.filtering%27-pysrc.html#filtering.contains_parent_dir">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="normalize_path"></a><span class="summary-sig-name">normalize_path</span>(<span class="summary-sig-arg">some_path</span>)</span><br />
+      return os.path.normcase( os.path.normpath( some_path ) )</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.filtering%27-pysrc.html#filtering.normalize_path">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygccxml.declarations.filtering%27.filtering-class.html#user_defined" class="summary-sig-name">user_defined</a>(<span class="summary-sig-arg">decls</span>,
+        <span class="summary-sig-arg">matcher</span>)</span><br />
+      returns list of declarations that match user specified criteria.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.filtering%27-pysrc.html#filtering.user_defined">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="by_location"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">by_location</span>(<span class="sig-arg">decls</span>,
+        <span class="sig-arg">locations</span>)</span>
+    <br /><em class="fname">Static Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pygccxml.declarations.filtering%27-pysrc.html#filtering.by_location">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>returns list of declarations that belongs to specified locations.</p>
+  <p>This function works recursively. Pay attention: if you remove 
+  namespace, then you remove all declarations defined within the 
+  namespace.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>decls</code></strong> (<a 
+          href="pygccxml.declarations.declaration.declaration_t-class.html"
+          class="link">declaration</a> or list of <a 
+          href="pygccxml.declarations.declaration.declaration_t-class.html"
+          class="link">declarations</a>) - declaration or list of declarations</li>
+        <li><strong class="pname"><code>locations</code></strong> (list of strings) - list of directories and/or files names</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>list of <a 
+          href="pygccxml.declarations.declaration.declaration_t-class.html"
+          class="link">declarations</a></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="user_defined"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">user_defined</span>(<span class="sig-arg">decls</span>,
+        <span class="sig-arg">matcher</span>)</span>
+    <br /><em class="fname">Static Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pygccxml.declarations.filtering%27-pysrc.html#filtering.user_defined">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>returns list of declarations that match user specified criteria.</p>
+  <p>This function works recursively.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>decls</code></strong> (<a 
+          href="pygccxml.declarations.declaration.declaration_t-class.html"
+          class="link">declaration</a> or list of <a 
+          href="pygccxml.declarations.declaration.declaration_t-class.html"
+          class="link">declarations</a>) - declaration or list of declarations</li>
+        <li><strong class="pname"><code>matcher</code></strong> - callable object, that takes 1 argument - declaration and returns 
+          True if object should stay, and false otherwise</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>list of <a 
+          href="pygccxml.declarations.declaration.declaration_t-class.html"
+          class="link">declarations</a></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Oct 20 09:00:19 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

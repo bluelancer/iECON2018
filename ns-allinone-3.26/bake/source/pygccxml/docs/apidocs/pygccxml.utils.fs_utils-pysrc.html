@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygccxml.utils.fs_utils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygccxml-module.html">Package&nbsp;pygccxml</a> ::
+        <a href="pygccxml.utils-module.html">Package&nbsp;utils</a> ::
+        Module&nbsp;fs_utils
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pygccxml.utils.fs_utils-module.html">Module pygccxml.utils.fs_utils</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2004-2008 Roman Yakovenko.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Distributed under the Boost Software License, Version 1.0. (See</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># accompanying file LICENSE_1_0.txt or copy at</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># http://www.boost.org/LICENSE_1_0.txt)</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Method pygccxml.parser.scanner.scanner_t.types()=pygccxml.parser.scanner.scanner_t-class.html#types"><a title="pygccxml.parser.scanner.scanner_t.types" class="py-name" href="#" onclick="return doclink('link-0', 'types', 'link-0');">types</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">##If you want include files that doesn't have extension then use filter like '*.'</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="_make_list"></a><div id="_make_list-def"><a name="L11"></a><tt class="py-lineno"> 11</tt> <a class="py-toggle" href="#" id="_make_list-toggle" onclick="return toggle('_make_list');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils-module.html#_make_list">_make_list</a><tt class="py-op">(</tt> <tt class="py-param">argument</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_make_list-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_make_list-expanded"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-1" class="py-name" targets="Variable pygccxml.declarations.calldef.argument_t.type=pygccxml.declarations.calldef.argument_t-class.html#type,Variable pygccxml.declarations.typedef.typedef_t.type=pygccxml.declarations.typedef.typedef_t-class.html#type,Variable pygccxml.declarations.variable.variable_t.type=pygccxml.declarations.variable.variable_t-class.html#type,Method pygccxml.msvc.bsc.instance_t.type()=pygccxml.msvc.bsc.instance_t-class.html#type,Method pygccxml.msvc.bsc_impl_details.instance_t.type()=pygccxml.msvc.bsc_impl_details.instance_t-class.html#type"><a title="pygccxml.declarations.calldef.argument_t.type
+pygccxml.declarations.typedef.typedef_t.type
+pygccxml.declarations.variable.variable_t.type
+pygccxml.msvc.bsc.instance_t.type
+pygccxml.msvc.bsc_impl_details.instance_t.type" class="py-name" href="#" onclick="return doclink('link-1', 'type', 'link-1');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">argument</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">StringTypes</tt><tt class="py-op">:</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">argument</tt><tt class="py-op">:</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">argument</tt><tt class="py-op">]</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt class="py-keyword">elif</tt> <tt id="link-2" class="py-name"><a title="pygccxml.declarations.calldef.argument_t.type
+pygccxml.declarations.typedef.typedef_t.type
+pygccxml.declarations.variable.variable_t.type
+pygccxml.msvc.bsc.instance_t.type
+pygccxml.msvc.bsc_impl_details.instance_t.type" class="py-name" href="#" onclick="return doclink('link-2', 'type', 'link-1');">type</a></tt><tt class="py-op">(</tt><tt class="py-name">argument</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">ListType</tt><tt class="py-op">:</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">argument</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">TypeError</tt><tt class="py-op">(</tt> <tt class="py-string">'Argument "%s" must be or list of strings or string.'</tt> <tt class="py-op">%</tt> <tt class="py-name">argument</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">         </tt>
+<a name="base_files_iterator"></a><div id="base_files_iterator-def"><a name="L22"></a><tt class="py-lineno"> 22</tt> <a class="py-toggle" href="#" id="base_files_iterator-toggle" onclick="return toggle('base_files_iterator');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.base_files_iterator-class.html">base_files_iterator</a><tt class="py-op">:</tt> </tt>
+</div><div id="base_files_iterator-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="base_files_iterator-expanded"><a name="base_files_iterator.__init__"></a><div id="base_files_iterator.__init__-def"><a name="L23"></a><tt class="py-lineno"> 23</tt> <a class="py-toggle" href="#" id="base_files_iterator.__init__-toggle" onclick="return toggle('base_files_iterator.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.base_files_iterator-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">file_exts</tt><tt class="py-op">,</tt> <tt class="py-param">is_include_exts</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="base_files_iterator.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="base_files_iterator.__init__-expanded"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__file_exts</tt> <tt class="py-op">=</tt> <tt class="py-name">_make_list</tt><tt class="py-op">(</tt> <tt class="py-name">file_exts</tt> <tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_include_exts</tt> <tt class="py-op">=</tt> <tt class="py-name">is_include_exts</tt> </tt>
+</div><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="base_files_iterator._is_to_skip"></a><div id="base_files_iterator._is_to_skip-def"><a name="L27"></a><tt class="py-lineno"> 27</tt> <a class="py-toggle" href="#" id="base_files_iterator._is_to_skip-toggle" onclick="return toggle('base_files_iterator._is_to_skip');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.base_files_iterator-class.html#_is_to_skip">_is_to_skip</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">file_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>      </tt>
+</div><a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__file_exts</tt><tt class="py-op">:</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-number">0</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-name">file_ext</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method pygccxml.msvc.bsc.module_t.path()=pygccxml.msvc.bsc.module_t-class.html#path,Method pygccxml.msvc.bsc_impl_details.module_t.path()=pygccxml.msvc.bsc_impl_details.module_t-class.html#path"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-3', 'path', 'link-3');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">splitext</tt><tt class="py-op">(</tt> <tt class="py-name">file_path</tt> <tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">file_ext</tt><tt class="py-op">:</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">            <tt class="py-name">file_ext</tt> <tt class="py-op">=</tt> <tt class="py-string">'.'</tt> <tt class="py-op">+</tt> <tt class="py-name">file_ext</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">file_ext</tt> <tt class="py-op">=</tt> <tt class="py-string">'*'</tt> <tt class="py-op">+</tt> <tt class="py-name">file_ext</tt>  </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">file_ext</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__file_exts</tt><tt class="py-op">:</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_include_exts</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_include_exts</tt> </tt>
+</div><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="base_files_iterator._subdirectories_and_files"></a><div id="base_files_iterator._subdirectories_and_files-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="base_files_iterator._subdirectories_and_files-toggle" onclick="return toggle('base_files_iterator._subdirectories_and_files');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.base_files_iterator-class.html#_subdirectories_and_files">_subdirectories_and_files</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">directory_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="base_files_iterator._subdirectories_and_files-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="base_files_iterator._subdirectories_and_files-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt id="link-4" class="py-name" targets="Method pygccxml.msvc.bsc.reader_t.files()=pygccxml.msvc.bsc.reader_t-class.html#files,Method pygccxml.msvc.bsc_impl_details.bsc_reader_t.files()=pygccxml.msvc.bsc_impl_details.bsc_reader_t-class.html#files,Method pygccxml.parser.scanner.scanner_t.files()=pygccxml.parser.scanner.scanner_t-class.html#files"><a title="pygccxml.msvc.bsc.reader_t.files
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.files
+pygccxml.parser.scanner.scanner_t.files" class="py-name" href="#" onclick="return doclink('link-4', 'files', 'link-4');">files</a></tt><tt class="py-op">,</tt> <tt class="py-name">directories</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">directory_contents</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">listdir</tt><tt class="py-op">(</tt><tt class="py-name">directory_path</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">object_name</tt> <tt class="py-keyword">in</tt> <tt class="py-name">directory_contents</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">            <tt class="py-name">object_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-5', 'path', 'link-3');">path</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Function pygccxml.declarations.call_invocation.join()=pygccxml.declarations.call_invocation-module.html#join,Method pygccxml.declarations.pattern_parser.parser_t.join()=pygccxml.declarations.pattern_parser.parser_t-class.html#join,Function pygccxml.declarations.templates.join()=pygccxml.declarations.templates-module.html#join"><a title="pygccxml.declarations.call_invocation.join
+pygccxml.declarations.pattern_parser.parser_t.join
+pygccxml.declarations.templates.join" class="py-name" href="#" onclick="return doclink('link-6', 'join', 'link-6');">join</a></tt><tt class="py-op">(</tt><tt class="py-name">directory_path</tt><tt class="py-op">,</tt> <tt class="py-name">object_name</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-7', 'path', 'link-3');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt> <tt class="py-name">object_path</tt> <tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_is_to_skip</tt><tt class="py-op">(</tt> <tt class="py-name">object_path</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">                <tt id="link-8" class="py-name"><a title="pygccxml.msvc.bsc.reader_t.files
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.files
+pygccxml.parser.scanner.scanner_t.files" class="py-name" href="#" onclick="return doclink('link-8', 'files', 'link-4');">files</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt class="py-name">object_path</tt> <tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-9', 'path', 'link-3');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">isdir</tt><tt class="py-op">(</tt> <tt class="py-name">object_path</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">                <tt class="py-name">directories</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt class="py-name">object_path</tt> <tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">                <tt class="py-keyword">pass</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">directories</tt><tt class="py-op">,</tt> <tt id="link-10" class="py-name"><a title="pygccxml.msvc.bsc.reader_t.files
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.files
+pygccxml.parser.scanner.scanner_t.files" class="py-name" href="#" onclick="return doclink('link-10', 'files', 'link-4');">files</a></tt> </tt>
+</div><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"> </tt>
+<a name="base_files_iterator.__iter__"></a><div id="base_files_iterator.__iter__-def"><a name="L52"></a><tt class="py-lineno"> 52</tt> <a class="py-toggle" href="#" id="base_files_iterator.__iter__-toggle" onclick="return toggle('base_files_iterator.__iter__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.base_files_iterator-class.html#__iter__">__iter__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="base_files_iterator.__iter__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="base_files_iterator.__iter__-expanded"><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="base_files_iterator.next"></a><div id="base_files_iterator.next-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="base_files_iterator.next-toggle" onclick="return toggle('base_files_iterator.next');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.base_files_iterator-class.html#next">next</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="base_files_iterator.next-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="base_files_iterator.next-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="base_files_iterator.restart"></a><div id="base_files_iterator.restart-def"><a name="L58"></a><tt class="py-lineno"> 58</tt> <a class="py-toggle" href="#" id="base_files_iterator.restart-toggle" onclick="return toggle('base_files_iterator.restart');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.base_files_iterator-class.html#restart">restart</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="base_files_iterator.restart-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="base_files_iterator.restart-expanded"><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div></div><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="files_walker"></a><div id="files_walker-def"><a name="L61"></a><tt class="py-lineno"> 61</tt> <a class="py-toggle" href="#" id="files_walker-toggle" onclick="return toggle('files_walker');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.files_walker-class.html">files_walker</a><tt class="py-op">(</tt><tt class="py-base-class">base_files_iterator</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files_walker-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="files_walker-expanded"><a name="files_walker.__init__"></a><div id="files_walker.__init__-def"><a name="L62"></a><tt class="py-lineno"> 62</tt> <a class="py-toggle" href="#" id="files_walker.__init__-toggle" onclick="return toggle('files_walker.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.files_walker-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">directories</tt><tt class="py-op">,</tt> <tt class="py-param">file_ext_filter</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt><tt class="py-op">,</tt> <tt class="py-param">is_include_filter</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-param">is_recursive</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files_walker.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="files_walker.__init__-expanded"><a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt id="link-11" class="py-name" targets="Class pygccxml.utils.fs_utils.base_files_iterator=pygccxml.utils.fs_utils.base_files_iterator-class.html"><a title="pygccxml.utils.fs_utils.base_files_iterator" class="py-name" href="#" onclick="return doclink('link-11', 'base_files_iterator', 'link-11');">base_files_iterator</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method pygccxml.declarations.algorithm.match_declaration_t.__init__()=pygccxml.declarations.algorithm.match_declaration_t-class.html#__init__,Method pygccxml.declarations.algorithm.visit_function_has_not_been_found_t.__init__()=pygccxml.declarations.algorithm.visit_function_has_not_been_found_t-class.html#__init__,Method pygccxml.declarations.algorithms_cache.declaration_algs_cache_t.__init__()=pygccxml.declarations.algorithms_cache.declaration_algs_cache_t-class.html#__init__,Method pygccxml.declarations.algorithms_cache.type_algs_cache_t.__init__()=pygccxml.declarations.algorithms_cache.type_algs_cache_t-class.html#__init__,Method pygccxml.declarations.calldef.argument_t.__init__()=pygccxml.declarations.calldef.argument_t-class.html#__init__,Method pygccxml.declarations.calldef.calldef_t.__init__()=pygccxml.declarations.calldef.calldef_t-class.html#__init__,Method pygccxml.declarations.calldef.casting_operator_t.__init__()=pygccxml.declarations.calldef.casting_operator_t-class.html#__init__,Method pygccxml.declarations.calldef.constructor_t.__init__()=pygccxml.declarations.calldef.constructor_t-class.html#__init__,Method pygccxml.declarations.calldef.destructor_t.__init__()=pygccxml.declarations.calldef.destructor_t-class.html#__init__,Method pygccxml.declarations.calldef.free_calldef_t.__init__()=pygccxml.declarations.calldef.free_calldef_t-class.html#__init__,Method pygccxml.declarations.calldef.free_function_t.__init__()=pygccxml.declarations.calldef.free_function_t-class.html#__init__,Method pygccxml.declarations.calldef.free_operator_t.__init__()=pygccxml.declarations.calldef.free_operator_t-class.html#__init__,Method pygccxml.declarations.calldef.member_calldef_t.__init__()=pygccxml.declarations.calldef.member_calldef_t-class.html#__init__,Method pygccxml.declarations.calldef.member_function_t.__init__()=pygccxml.declarations.calldef.member_function_t-class.html#__init__,Method pygccxml.declarations.calldef.member_operator_t.__init__()=pygccxml.declarations.calldef.member_operator_t-class.html#__init__,Method pygccxml.declarations.calldef.operator_t.__init__()=pygccxml.declarations.calldef.operator_t-class.html#__init__,Method pygccxml.declarations.class_declaration.class_declaration_t.__init__()=pygccxml.declarations.class_declaration.class_declaration_t-class.html#__init__,Method pygccxml.declarations.class_declaration.class_t.__init__()=pygccxml.declarations.class_declaration.class_t-class.html#__init__,Method pygccxml.declarations.class_declaration.hierarchy_info_t.__init__()=pygccxml.declarations.class_declaration.hierarchy_info_t-class.html#__init__,Method pygccxml.declarations.container_traits.container_traits_impl_t.__init__()=pygccxml.declarations.container_traits.container_traits_impl_t-class.html#__init__,Method pygccxml.declarations.cpptypes.array_t.__init__()=pygccxml.declarations.cpptypes.array_t-class.html#__init__,Method pygccxml.declarations.cpptypes.bool_t.__init__()=pygccxml.declarations.cpptypes.bool_t-class.html#__init__,Method pygccxml.declarations.cpptypes.calldef_type_t.__init__()=pygccxml.declarations.cpptypes.calldef_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.char_t.__init__()=pygccxml.declarations.cpptypes.char_t-class.html#__init__,Method pygccxml.declarations.cpptypes.complex_double_t.__init__()=pygccxml.declarations.cpptypes.complex_double_t-class.html#__init__,Method pygccxml.declarations.cpptypes.complex_float_t.__init__()=pygccxml.declarations.cpptypes.complex_float_t-class.html#__init__,Method pygccxml.declarations.cpptypes.complex_long_double_t.__init__()=pygccxml.declarations.cpptypes.complex_long_double_t-class.html#__init__,Method pygccxml.declarations.cpptypes.compound_t.__init__()=pygccxml.declarations.cpptypes.compound_t-class.html#__init__,Method pygccxml.declarations.cpptypes.const_t.__init__()=pygccxml.declarations.cpptypes.const_t-class.html#__init__,Method pygccxml.declarations.cpptypes.declarated_t.__init__()=pygccxml.declarations.cpptypes.declarated_t-class.html#__init__,Method pygccxml.declarations.cpptypes.double_t.__init__()=pygccxml.declarations.cpptypes.double_t-class.html#__init__,Method pygccxml.declarations.cpptypes.dummy_type_t.__init__()=pygccxml.declarations.cpptypes.dummy_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.ellipsis_t.__init__()=pygccxml.declarations.cpptypes.ellipsis_t-class.html#__init__,Method pygccxml.declarations.cpptypes.float_t.__init__()=pygccxml.declarations.cpptypes.float_t-class.html#__init__,Method pygccxml.declarations.cpptypes.free_function_type_t.__init__()=pygccxml.declarations.cpptypes.free_function_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.fundamental_t.__init__()=pygccxml.declarations.cpptypes.fundamental_t-class.html#__init__,Method pygccxml.declarations.cpptypes.int_t.__init__()=pygccxml.declarations.cpptypes.int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.java_fundamental_t.__init__()=pygccxml.declarations.cpptypes.java_fundamental_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jboolean_t.__init__()=pygccxml.declarations.cpptypes.jboolean_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jbyte_t.__init__()=pygccxml.declarations.cpptypes.jbyte_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jchar_t.__init__()=pygccxml.declarations.cpptypes.jchar_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jdouble_t.__init__()=pygccxml.declarations.cpptypes.jdouble_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jfloat_t.__init__()=pygccxml.declarations.cpptypes.jfloat_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jint_t.__init__()=pygccxml.declarations.cpptypes.jint_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jlong_t.__init__()=pygccxml.declarations.cpptypes.jlong_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jshort_t.__init__()=pygccxml.declarations.cpptypes.jshort_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_double_t.__init__()=pygccxml.declarations.cpptypes.long_double_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_int_t.__init__()=pygccxml.declarations.cpptypes.long_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_long_int_t.__init__()=pygccxml.declarations.cpptypes.long_long_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_long_unsigned_int_t.__init__()=pygccxml.declarations.cpptypes.long_long_unsigned_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_unsigned_int_t.__init__()=pygccxml.declarations.cpptypes.long_unsigned_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.member_function_type_t.__init__()=pygccxml.declarations.cpptypes.member_function_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.member_variable_type_t.__init__()=pygccxml.declarations.cpptypes.member_variable_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.pointer_t.__init__()=pygccxml.declarations.cpptypes.pointer_t-class.html#__init__,Method pygccxml.declarations.cpptypes.reference_t.__init__()=pygccxml.declarations.cpptypes.reference_t-class.html#__init__,Method pygccxml.declarations.cpptypes.restrict_t.__init__()=pygccxml.declarations.cpptypes.restrict_t-class.html#__init__,Method pygccxml.declarations.cpptypes.short_int_t.__init__()=pygccxml.declarations.cpptypes.short_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.short_unsigned_int_t.__init__()=pygccxml.declarations.cpptypes.short_unsigned_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.signed_char_t.__init__()=pygccxml.declarations.cpptypes.signed_char_t-class.html#__init__,Method pygccxml.declarations.cpptypes.type_qualifiers_t.__init__()=pygccxml.declarations.cpptypes.type_qualifiers_t-class.html#__init__,Method pygccxml.declarations.cpptypes.type_t.__init__()=pygccxml.declarations.cpptypes.type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.unknown_t.__init__()=pygccxml.declarations.cpptypes.unknown_t-class.html#__init__,Method pygccxml.declarations.cpptypes.unsigned_char_t.__init__()=pygccxml.declarations.cpptypes.unsigned_char_t-class.html#__init__,Method pygccxml.declarations.cpptypes.unsigned_int_t.__init__()=pygccxml.declarations.cpptypes.unsigned_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.void_t.__init__()=pygccxml.declarations.cpptypes.void_t-class.html#__init__,Method pygccxml.declarations.cpptypes.volatile_t.__init__()=pygccxml.declarations.cpptypes.volatile_t-class.html#__init__,Method pygccxml.declarations.cpptypes.wchar_t.__init__()=pygccxml.declarations.cpptypes.wchar_t-class.html#__init__,Method pygccxml.declarations.decl_factory.decl_factory_t.__init__()=pygccxml.declarations.decl_factory.decl_factory_t-class.html#__init__,Method pygccxml.declarations.decl_printer.decl_printer_t.__init__()=pygccxml.declarations.decl_printer.decl_printer_t-class.html#__init__,Method pygccxml.declarations.decl_visitor.decl_visitor_t.__init__()=pygccxml.declarations.decl_visitor.decl_visitor_t-class.html#__init__,Method pygccxml.declarations.declaration.declaration_t.__init__()=pygccxml.declarations.declaration.declaration_t-class.html#__init__,Method pygccxml.declarations.declaration.location_t.__init__()=pygccxml.declarations.declaration.location_t-class.html#__init__,Method pygccxml.declarations.dependencies.dependency_info_t.__init__()=pygccxml.declarations.dependencies.dependency_info_t-class.html#__init__,Method pygccxml.declarations.enumeration.enumeration_t.__init__()=pygccxml.declarations.enumeration.enumeration_t-class.html#__init__,Method pygccxml.declarations.matcher.declaration_not_found_t.__init__()=pygccxml.declarations.matcher.declaration_not_found_t-class.html#__init__,Method pygccxml.declarations.matcher.multiple_declarations_found_t.__init__()=pygccxml.declarations.matcher.multiple_declarations_found_t-class.html#__init__,Method pygccxml.declarations.matchers.access_type_matcher_t.__init__()=pygccxml.declarations.matchers.access_type_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.and_matcher_t.__init__()=pygccxml.declarations.matchers.and_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.calldef_matcher_t.__init__()=pygccxml.declarations.matchers.calldef_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.custom_matcher_t.__init__()=pygccxml.declarations.matchers.custom_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.declaration_matcher_t.__init__()=pygccxml.declarations.matchers.declaration_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.matcher_base_t.__init__()=pygccxml.declarations.matchers.matcher_base_t-class.html#__init__,Method pygccxml.declarations.matchers.namespace_matcher_t.__init__()=pygccxml.declarations.matchers.namespace_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.not_matcher_t.__init__()=pygccxml.declarations.matchers.not_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.operator_matcher_t.__init__()=pygccxml.declarations.matchers.operator_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.or_matcher_t.__init__()=pygccxml.declarations.matchers.or_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.regex_matcher_t.__init__()=pygccxml.declarations.matchers.regex_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.variable_matcher_t.__init__()=pygccxml.declarations.matchers.variable_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.virtuality_type_matcher_t.__init__()=pygccxml.declarations.matchers.virtuality_type_matcher_t-class.html#__init__,Method pygccxml.declarations.mdecl_wrapper.call_redirector_t.__init__()=pygccxml.declarations.mdecl_wrapper.call_redirector_t-class.html#__init__,Method pygccxml.declarations.mdecl_wrapper.mdecl_wrapper_t.__init__()=pygccxml.declarations.mdecl_wrapper.mdecl_wrapper_t-class.html#__init__,Method pygccxml.declarations.namespace.namespace_t.__init__()=pygccxml.declarations.namespace.namespace_t-class.html#__init__,Method pygccxml.declarations.pattern_parser.parser_t.__init__()=pygccxml.declarations.pattern_parser.parser_t-class.html#__init__,Method pygccxml.declarations.scopedef.scopedef_t.__init__()=pygccxml.declarations.scopedef.scopedef_t-class.html#__init__,Method pygccxml.declarations.type_traits.declaration_xxx_traits.__init__()=pygccxml.declarations.type_traits.declaration_xxx_traits-class.html#__init__,Method pygccxml.declarations.type_visitor.type_visitor_t.__init__()=pygccxml.declarations.type_visitor.type_visitor_t-class.html#__init__,Method pygccxml.declarations.typedef.typedef_t.__init__()=pygccxml.declarations.typedef.typedef_t-class.html#__init__,Method pygccxml.declarations.variable.variable_t.__init__()=pygccxml.declarations.variable.variable_t-class.html#__init__,Method pygccxml.msvc.bsc.definition_t.__init__()=pygccxml.msvc.bsc.definition_t-class.html#__init__,Method pygccxml.msvc.bsc.instance_t.__init__()=pygccxml.msvc.bsc.instance_t-class.html#__init__,Method pygccxml.msvc.bsc.module_t.__init__()=pygccxml.msvc.bsc.module_t-class.html#__init__,Method pygccxml.msvc.bsc.reader_t.__init__()=pygccxml.msvc.bsc.reader_t-class.html#__init__,Method pygccxml.msvc.bsc_impl_details.bsc_reader_t.__init__()=pygccxml.msvc.bsc_impl_details.bsc_reader_t-class.html#__init__,Method pygccxml.msvc.bsc_impl_details.definition_t.__init__()=pygccxml.msvc.bsc_impl_details.definition_t-class.html#__init__,Method pygccxml.msvc.bsc_impl_details.instance_t.__init__()=pygccxml.msvc.bsc_impl_details.instance_t-class.html#__init__,Method pygccxml.msvc.bsc_impl_details.module_t.__init__()=pygccxml.msvc.bsc_impl_details.module_t-class.html#__init__,Method pygccxml.msvc.pdb.impl_details.full_name_splitter_t.__init__()=pygccxml.msvc.pdb.impl_details.full_name_splitter_t-class.html#__init__,Method pygccxml.msvc.pdb.loader.decl_loader_t.__init__()=pygccxml.msvc.pdb.loader.decl_loader_t-class.html#__init__,Method pygccxml.msvc.pdb.loader.decl_loader_t.parent_exists_t.__init__()=pygccxml.msvc.pdb.loader.decl_loader_t.parent_exists_t-class.html#__init__,Method pygccxml.parser.config.gccxml_configuration_t.__init__()=pygccxml.parser.config.gccxml_configuration_t-class.html#__init__,Method pygccxml.parser.config.parser_configuration_t.__init__()=pygccxml.parser.config.parser_configuration_t-class.html#__init__,Method pygccxml.parser.declarations_cache.cache_base_t.__init__()=pygccxml.parser.declarations_cache.cache_base_t-class.html#__init__,Method pygccxml.parser.declarations_cache.dummy_cache_t.__init__()=pygccxml.parser.declarations_cache.dummy_cache_t-class.html#__init__,Method pygccxml.parser.declarations_cache.file_cache_t.__init__()=pygccxml.parser.declarations_cache.file_cache_t-class.html#__init__,Method pygccxml.parser.declarations_cache.record_t.__init__()=pygccxml.parser.declarations_cache.record_t-class.html#__init__,Method pygccxml.parser.directory_cache.directory_cache_t.__init__()=pygccxml.parser.directory_cache.directory_cache_t-class.html#__init__,Method pygccxml.parser.directory_cache.filename_entry_t.__init__()=pygccxml.parser.directory_cache.filename_entry_t-class.html#__init__,Method pygccxml.parser.directory_cache.filename_repository_t.__init__()=pygccxml.parser.directory_cache.filename_repository_t-class.html#__init__,Method pygccxml.parser.directory_cache.index_entry_t.__init__()=pygccxml.parser.directory_cache.index_entry_t-class.html#__init__,Method pygccxml.parser.etree_scanner.etree_saxifier_t.__init__()=pygccxml.parser.etree_scanner.etree_saxifier_t-class.html#__init__,Method pygccxml.parser.etree_scanner.ietree_scanner_t.__init__()=pygccxml.parser.etree_scanner.ietree_scanner_t-class.html#__init__,Method pygccxml.parser.linker.linker_t.__init__()=pygccxml.parser.linker.linker_t-class.html#__init__,Method pygccxml.parser.patcher.casting_operator_patcher_t.__init__()=pygccxml.parser.patcher.casting_operator_patcher_t-class.html#__init__,Method pygccxml.parser.patcher.default_argument_patcher_t.__init__()=pygccxml.parser.patcher.default_argument_patcher_t-class.html#__init__,Method pygccxml.parser.project_reader.file_configuration_t.__init__()=pygccxml.parser.project_reader.file_configuration_t-class.html#__init__,Method pygccxml.parser.project_reader.project_reader_t.__init__()=pygccxml.parser.project_reader.project_reader_t-class.html#__init__,Method pygccxml.parser.scanner.scanner_t.__init__()=pygccxml.parser.scanner.scanner_t-class.html#__init__,Method pygccxml.parser.source_reader.gccxml_runtime_error_t.__init__()=pygccxml.parser.source_reader.gccxml_runtime_error_t-class.html#__init__,Method pygccxml.parser.source_reader.source_reader_t.__init__()=pygccxml.parser.source_reader.source_reader_t-class.html#__init__,Method pygccxml.utils.cached.__init__()=pygccxml.utils.cached-class.html#__init__,Method pygccxml.utils.fs_utils.base_files_iterator.__init__()=pygccxml.utils.fs_utils.base_files_iterator-class.html#__init__,Method pygccxml.utils.fs_utils.directories_walker.__init__()=pygccxml.utils.fs_utils.directories_walker-class.html#__init__,Method pygccxml.utils.fs_utils.files_walker.__init__()=pygccxml.utils.fs_utils.files_walker-class.html#__init__"><a title="pygccxml.declarations.algorithm.match_declaration_t.__init__
+pygccxml.declarations.algorithm.visit_function_has_not_been_found_t.__init__
+pygccxml.declarations.algorithms_cache.declaration_algs_cache_t.__init__
+pygccxml.declarations.algorithms_cache.type_algs_cache_t.__init__
+pygccxml.declarations.calldef.argument_t.__init__
+pygccxml.declarations.calldef.calldef_t.__init__
+pygccxml.declarations.calldef.casting_operator_t.__init__
+pygccxml.declarations.calldef.constructor_t.__init__
+pygccxml.declarations.calldef.destructor_t.__init__
+pygccxml.declarations.calldef.free_calldef_t.__init__
+pygccxml.declarations.calldef.free_function_t.__init__
+pygccxml.declarations.calldef.free_operator_t.__init__
+pygccxml.declarations.calldef.member_calldef_t.__init__
+pygccxml.declarations.calldef.member_function_t.__init__
+pygccxml.declarations.calldef.member_operator_t.__init__
+pygccxml.declarations.calldef.operator_t.__init__
+pygccxml.declarations.class_declaration.class_declaration_t.__init__
+pygccxml.declarations.class_declaration.class_t.__init__
+pygccxml.declarations.class_declaration.hierarchy_info_t.__init__
+pygccxml.declarations.container_traits.container_traits_impl_t.__init__
+pygccxml.declarations.cpptypes.array_t.__init__
+pygccxml.declarations.cpptypes.bool_t.__init__
+pygccxml.declarations.cpptypes.calldef_type_t.__init__
+pygccxml.declarations.cpptypes.char_t.__init__
+pygccxml.declarations.cpptypes.complex_double_t.__init__
+pygccxml.declarations.cpptypes.complex_float_t.__init__
+pygccxml.declarations.cpptypes.complex_long_double_t.__init__
+pygccxml.declarations.cpptypes.compound_t.__init__
+pygccxml.declarations.cpptypes.const_t.__init__
+pygccxml.declarations.cpptypes.declarated_t.__init__
+pygccxml.declarations.cpptypes.double_t.__init__
+pygccxml.declarations.cpptypes.dummy_type_t.__init__
+pygccxml.declarations.cpptypes.ellipsis_t.__init__
+pygccxml.declarations.cpptypes.float_t.__init__
+pygccxml.declarations.cpptypes.free_function_type_t.__init__
+pygccxml.declarations.cpptypes.fundamental_t.__init__
+pygccxml.declarations.cpptypes.int_t.__init__
+pygccxml.declarations.cpptypes.java_fundamental_t.__init__
+pygccxml.declarations.cpptypes.jboolean_t.__init__
+pygccxml.declarations.cpptypes.jbyte_t.__init__
+pygccxml.declarations.cpptypes.jchar_t.__init__
+pygccxml.declarations.cpptypes.jdouble_t.__init__
+pygccxml.declarations.cpptypes.jfloat_t.__init__
+pygccxml.declarations.cpptypes.jint_t.__init__
+pygccxml.declarations.cpptypes.jlong_t.__init__
+pygccxml.declarations.cpptypes.jshort_t.__init__
+pygccxml.declarations.cpptypes.long_double_t.__init__
+pygccxml.declarations.cpptypes.long_int_t.__init__
+pygccxml.declarations.cpptypes.long_long_int_t.__init__
+pygccxml.declarations.cpptypes.long_long_unsigned_int_t.__init__
+pygccxml.declarations.cpptypes.long_unsigned_int_t.__init__
+pygccxml.declarations.cpptypes.member_function_type_t.__init__
+pygccxml.declarations.cpptypes.member_variable_type_t.__init__
+pygccxml.declarations.cpptypes.pointer_t.__init__
+pygccxml.declarations.cpptypes.reference_t.__init__
+pygccxml.declarations.cpptypes.restrict_t.__init__
+pygccxml.declarations.cpptypes.short_int_t.__init__
+pygccxml.declarations.cpptypes.short_unsigned_int_t.__init__
+pygccxml.declarations.cpptypes.signed_char_t.__init__
+pygccxml.declarations.cpptypes.type_qualifiers_t.__init__
+pygccxml.declarations.cpptypes.type_t.__init__
+pygccxml.declarations.cpptypes.unknown_t.__init__
+pygccxml.declarations.cpptypes.unsigned_char_t.__init__
+pygccxml.declarations.cpptypes.unsigned_int_t.__init__
+pygccxml.declarations.cpptypes.void_t.__init__
+pygccxml.declarations.cpptypes.volatile_t.__init__
+pygccxml.declarations.cpptypes.wchar_t.__init__
+pygccxml.declarations.decl_factory.decl_factory_t.__init__
+pygccxml.declarations.decl_printer.decl_printer_t.__init__
+pygccxml.declarations.decl_visitor.decl_visitor_t.__init__
+pygccxml.declarations.declaration.declaration_t.__init__
+pygccxml.declarations.declaration.location_t.__init__
+pygccxml.declarations.dependencies.dependency_info_t.__init__
+pygccxml.declarations.enumeration.enumeration_t.__init__
+pygccxml.declarations.matcher.declaration_not_found_t.__init__
+pygccxml.declarations.matcher.multiple_declarations_found_t.__init__
+pygccxml.declarations.matchers.access_type_matcher_t.__init__
+pygccxml.declarations.matchers.and_matcher_t.__init__
+pygccxml.declarations.matchers.calldef_matcher_t.__init__
+pygccxml.declarations.matchers.custom_matcher_t.__init__
+pygccxml.declarations.matchers.declaration_matcher_t.__init__
+pygccxml.declarations.matchers.matcher_base_t.__init__
+pygccxml.declarations.matchers.namespace_matcher_t.__init__
+pygccxml.declarations.matchers.not_matcher_t.__init__
+pygccxml.declarations.matchers.operator_matcher_t.__init__
+pygccxml.declarations.matchers.or_matcher_t.__init__
+pygccxml.declarations.matchers.regex_matcher_t.__init__
+pygccxml.declarations.matchers.variable_matcher_t.__init__
+pygccxml.declarations.matchers.virtuality_type_matcher_t.__init__
+pygccxml.declarations.mdecl_wrapper.call_redirector_t.__init__
+pygccxml.declarations.mdecl_wrapper.mdecl_wrapper_t.__init__
+pygccxml.declarations.namespace.namespace_t.__init__
+pygccxml.declarations.pattern_parser.parser_t.__init__
+pygccxml.declarations.scopedef.scopedef_t.__init__
+pygccxml.declarations.type_traits.declaration_xxx_traits.__init__
+pygccxml.declarations.type_visitor.type_visitor_t.__init__
+pygccxml.declarations.typedef.typedef_t.__init__
+pygccxml.declarations.variable.variable_t.__init__
+pygccxml.msvc.bsc.definition_t.__init__
+pygccxml.msvc.bsc.instance_t.__init__
+pygccxml.msvc.bsc.module_t.__init__
+pygccxml.msvc.bsc.reader_t.__init__
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.__init__
+pygccxml.msvc.bsc_impl_details.definition_t.__init__
+pygccxml.msvc.bsc_impl_details.instance_t.__init__
+pygccxml.msvc.bsc_impl_details.module_t.__init__
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.__init__
+pygccxml.msvc.pdb.loader.decl_loader_t.__init__
+pygccxml.msvc.pdb.loader.decl_loader_t.parent_exists_t.__init__
+pygccxml.parser.config.gccxml_configuration_t.__init__
+pygccxml.parser.config.parser_configuration_t.__init__
+pygccxml.parser.declarations_cache.cache_base_t.__init__
+pygccxml.parser.declarations_cache.dummy_cache_t.__init__
+pygccxml.parser.declarations_cache.file_cache_t.__init__
+pygccxml.parser.declarations_cache.record_t.__init__
+pygccxml.parser.directory_cache.directory_cache_t.__init__
+pygccxml.parser.directory_cache.filename_entry_t.__init__
+pygccxml.parser.directory_cache.filename_repository_t.__init__
+pygccxml.parser.directory_cache.index_entry_t.__init__
+pygccxml.parser.etree_scanner.etree_saxifier_t.__init__
+pygccxml.parser.etree_scanner.ietree_scanner_t.__init__
+pygccxml.parser.linker.linker_t.__init__
+pygccxml.parser.patcher.casting_operator_patcher_t.__init__
+pygccxml.parser.patcher.default_argument_patcher_t.__init__
+pygccxml.parser.project_reader.file_configuration_t.__init__
+pygccxml.parser.project_reader.project_reader_t.__init__
+pygccxml.parser.scanner.scanner_t.__init__
+pygccxml.parser.source_reader.gccxml_runtime_error_t.__init__
+pygccxml.parser.source_reader.source_reader_t.__init__
+pygccxml.utils.cached.__init__
+pygccxml.utils.fs_utils.base_files_iterator.__init__
+pygccxml.utils.fs_utils.directories_walker.__init__
+pygccxml.utils.fs_utils.files_walker.__init__" class="py-name" href="#" onclick="return doclink('link-12', '__init__', 'link-12');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">file_ext_filter</tt><tt class="py-op">,</tt> <tt class="py-name">is_include_filter</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__directories</tt> <tt class="py-op">=</tt> <tt class="py-name">_make_list</tt><tt class="py-op">(</tt> <tt class="py-name">directories</tt> <tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_recursive</tt> <tt class="py-op">=</tt> <tt class="py-name">is_recursive</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__file_generator</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="files_walker.__walk"></a><div id="files_walker.__walk-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="files_walker.__walk-toggle" onclick="return toggle('files_walker.__walk');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.files_walker-class.html#__walk">__walk</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files_walker.__walk-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="files_walker.__walk-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-name">directories</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__directories</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-name">directories</tt><tt class="py-op">:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt class="py-name">sub_directories</tt><tt class="py-op">,</tt> <tt id="link-13" class="py-name"><a title="pygccxml.msvc.bsc.reader_t.files
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.files
+pygccxml.parser.scanner.scanner_t.files" class="py-name" href="#" onclick="return doclink('link-13', 'files', 'link-4');">files</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_subdirectories_and_files</tt><tt class="py-op">(</tt> <tt class="py-name">directories</tt><tt class="py-op">.</tt><tt class="py-name">pop</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_recursive</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">directory</tt> <tt class="py-keyword">in</tt> <tt class="py-name">sub_directories</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                    <tt class="py-name">directories</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt class="py-name">directory</tt> <tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">file_os</tt> <tt class="py-keyword">in</tt> <tt id="link-14" class="py-name"><a title="pygccxml.msvc.bsc.reader_t.files
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.files
+pygccxml.parser.scanner.scanner_t.files" class="py-name" href="#" onclick="return doclink('link-14', 'files', 'link-4');">files</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">                <tt class="py-keyword">yield</tt> <tt class="py-name">file_os</tt> </tt>
+</div><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="files_walker.__iter__"></a><div id="files_walker.__iter__-def"><a name="L78"></a><tt class="py-lineno"> 78</tt> <a class="py-toggle" href="#" id="files_walker.__iter__-toggle" onclick="return toggle('files_walker.__iter__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.files_walker-class.html#__iter__">__iter__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files_walker.__iter__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="files_walker.__iter__-expanded"><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__file_generator</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__walk</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt> </tt>
+</div><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="files_walker.next"></a><div id="files_walker.next-def"><a name="L82"></a><tt class="py-lineno"> 82</tt> <a class="py-toggle" href="#" id="files_walker.next-toggle" onclick="return toggle('files_walker.next');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.files_walker-class.html#next">next</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files_walker.next-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="files_walker.next-expanded"><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__file_generator</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method pygccxml.utils.fs_utils.base_files_iterator.next()=pygccxml.utils.fs_utils.base_files_iterator-class.html#next,Method pygccxml.utils.fs_utils.directories_walker.next()=pygccxml.utils.fs_utils.directories_walker-class.html#next,Method pygccxml.utils.fs_utils.files_walker.next()=pygccxml.utils.fs_utils.files_walker-class.html#next"><a title="pygccxml.utils.fs_utils.base_files_iterator.next
+pygccxml.utils.fs_utils.directories_walker.next
+pygccxml.utils.fs_utils.files_walker.next" class="py-name" href="#" onclick="return doclink('link-15', 'next', 'link-15');">next</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"> </tt>
+<a name="files_walker.restart"></a><div id="files_walker.restart-def"><a name="L85"></a><tt class="py-lineno"> 85</tt> <a class="py-toggle" href="#" id="files_walker.restart-toggle" onclick="return toggle('files_walker.restart');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.files_walker-class.html#restart">restart</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="files_walker.restart-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="files_walker.restart-expanded"><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__file_generator</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div></div><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="directories_walker"></a><div id="directories_walker-def"><a name="L89"></a><tt class="py-lineno"> 89</tt> <a class="py-toggle" href="#" id="directories_walker-toggle" onclick="return toggle('directories_walker');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.directories_walker-class.html">directories_walker</a><tt class="py-op">:</tt> </tt>
+</div><div id="directories_walker-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="directories_walker-expanded"><a name="directories_walker.__init__"></a><div id="directories_walker.__init__-def"><a name="L90"></a><tt class="py-lineno"> 90</tt> <a class="py-toggle" href="#" id="directories_walker.__init__-toggle" onclick="return toggle('directories_walker.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.directories_walker-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">directories</tt><tt class="py-op">,</tt> <tt class="py-param">is_recursive</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="directories_walker.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="directories_walker.__init__-expanded"><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__directories</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-16" class="py-name" targets="Variable pygccxml.utils.loggers.root=pygccxml.utils.loggers-class.html#root"><a title="pygccxml.utils.loggers.root" class="py-name" href="#" onclick="return doclink('link-16', 'root', 'link-16');">root</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">_make_list</tt><tt class="py-op">(</tt> <tt class="py-name">directories</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__directories</tt><tt class="py-op">.</tt><tt class="py-name">extend</tt><tt class="py-op">(</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sub_directories</tt><tt class="py-op">(</tt> <tt id="link-17" class="py-name"><a title="pygccxml.utils.loggers.root" class="py-name" href="#" onclick="return doclink('link-17', 'root', 'link-16');">root</a></tt> <tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_recursive</tt> <tt class="py-op">=</tt> <tt class="py-name">is_recursive</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__directory_generator</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">         </tt>
+<a name="directories_walker.__sub_directories"></a><div id="directories_walker.__sub_directories-def"><a name="L97"></a><tt class="py-lineno"> 97</tt> <a class="py-toggle" href="#" id="directories_walker.__sub_directories-toggle" onclick="return toggle('directories_walker.__sub_directories');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.directories_walker-class.html#__sub_directories">__sub_directories</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">directory_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="directories_walker.__sub_directories-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="directories_walker.__sub_directories-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">sub_directories</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-name">directory_contains</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">listdir</tt><tt class="py-op">(</tt><tt class="py-name">directory_path</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">object_in_directory</tt> <tt class="py-keyword">in</tt> <tt class="py-name">directory_contains</tt><tt class="py-op">:</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">            <tt class="py-name">full_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-18', 'path', 'link-3');">path</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="pygccxml.declarations.call_invocation.join
+pygccxml.declarations.pattern_parser.parser_t.join
+pygccxml.declarations.templates.join" class="py-name" href="#" onclick="return doclink('link-19', 'join', 'link-6');">join</a></tt><tt class="py-op">(</tt><tt class="py-name">directory_path</tt><tt class="py-op">,</tt> <tt class="py-name">object_in_directory</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-20', 'path', 'link-3');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">isdir</tt><tt class="py-op">(</tt> <tt class="py-name">full_path</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                <tt class="py-name">sub_directories</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt class="py-name">full_path</tt> <tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">sub_directories</tt> </tt>
+</div><a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="directories_walker.__walk"></a><div id="directories_walker.__walk-def"><a name="L106"></a><tt class="py-lineno">106</tt> <a class="py-toggle" href="#" id="directories_walker.__walk-toggle" onclick="return toggle('directories_walker.__walk');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.directories_walker-class.html#__walk">__walk</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="directories_walker.__walk-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="directories_walker.__walk-expanded"><a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">directories</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__directories</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">curr_directory</tt> <tt class="py-keyword">in</tt> <tt class="py-name">directories</tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">            <tt class="py-keyword">yield</tt> <tt class="py-name">curr_directory</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__is_recursive</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt id="link-21" class="py-name" targets="Class pygccxml.utils.fs_utils.directories_walker=pygccxml.utils.fs_utils.directories_walker-class.html"><a title="pygccxml.utils.fs_utils.directories_walker" class="py-name" href="#" onclick="return doclink('link-21', 'directories_walker', 'link-21');">directories_walker</a></tt><tt class="py-op">(</tt> <tt class="py-op">[</tt><tt class="py-name">curr_directory</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                    <tt class="py-keyword">yield</tt> <tt class="py-name">f</tt> </tt>
+</div><a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                 </tt>
+<a name="directories_walker.__iter__"></a><div id="directories_walker.__iter__-def"><a name="L114"></a><tt class="py-lineno">114</tt> <a class="py-toggle" href="#" id="directories_walker.__iter__-toggle" onclick="return toggle('directories_walker.__iter__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.directories_walker-class.html#__iter__">__iter__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="directories_walker.__iter__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="directories_walker.__iter__-expanded"><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__directory_generator</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__walk</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt> </tt>
+</div><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="directories_walker.next"></a><div id="directories_walker.next-def"><a name="L118"></a><tt class="py-lineno">118</tt> <a class="py-toggle" href="#" id="directories_walker.next-toggle" onclick="return toggle('directories_walker.next');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.directories_walker-class.html#next">next</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="directories_walker.next-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="directories_walker.next-expanded"><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__directory_generator</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="pygccxml.utils.fs_utils.base_files_iterator.next
+pygccxml.utils.fs_utils.directories_walker.next
+pygccxml.utils.fs_utils.files_walker.next" class="py-name" href="#" onclick="return doclink('link-22', 'next', 'link-15');">next</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt>
+<a name="directories_walker.restart"></a><div id="directories_walker.restart-def"><a name="L121"></a><tt class="py-lineno">121</tt> <a class="py-toggle" href="#" id="directories_walker.restart-toggle" onclick="return toggle('directories_walker.restart');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.fs_utils.directories_walker-class.html#restart">restart</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="directories_walker.restart-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="directories_walker.restart-expanded"><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__directory_generator</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div></div><a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-string">'__main__'</tt> <tt class="py-op">==</tt> <tt class="py-name">__name__</tt><tt class="py-op">:</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">    <tt class="py-comment">#lFileCount = 0</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment">#for file_os in files_iterator( r'C:\Program Files\Microsoft Visual Studio\VC98\Include\stlport', ['*.h', '*.'], True, False):</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#print file_os</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#lFileCount += 1</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment">#print lFileCount</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt class="py-comment">#~ for directory in directories_iterator( '/home/roman/language-binding', False ):</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#~ print directory</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment">#~ for directory in directories_iterator( '/home/roman/language-binding', True ):</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#~ print directory</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Oct 20 09:00:24 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

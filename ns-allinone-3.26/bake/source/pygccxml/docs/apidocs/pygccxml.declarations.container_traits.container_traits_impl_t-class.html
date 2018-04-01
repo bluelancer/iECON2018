@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygccxml.declarations.container_traits.container_traits_impl_t</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygccxml-module.html">Package&nbsp;pygccxml</a> ::
+        <a href="pygccxml.declarations-module.html">Package&nbsp;declarations</a> ::
+        <a href="pygccxml.declarations.container_traits-module.html">Module&nbsp;container_traits</a> ::
+        Class&nbsp;container_traits_impl_t
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASSTYPE DESCRIPTION ==================== -->
+<h1 class="epydoc">ClassType container_traits_impl_t</h1><p class="nomargin-top"><span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t">source&nbsp;code</a></span></p>
+<p>this class implements the functionality needed for convinient work 
+  with STD container classes.</p>
+  <p>Implemented functionality:</p>
+  <ul>
+    <li>
+      find out whether a declaration is STD container or not
+    </li>
+    <li>
+      find out container value( mapped ) type
+    </li>
+  </ul>
+  <p>This class tries to be useful as much, as possible. For example, for 
+  class declaration( and not definition ) it parsers the class name in 
+  order to extract all the information.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygccxml.declarations.container_traits.container_traits_impl_t-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">container_name</span>,
+        <span class="summary-sig-arg">element_type_index</span>,
+        <span class="summary-sig-arg">element_type_typedef</span>,
+        <span class="summary-sig-arg">defaults_remover</span>,
+        <span class="summary-sig-arg">key_type_index</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">key_type_typedef</span>=<span class="summary-sig-default">None</span>)</span><br />
+      container_name - std container name...</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="name"></a><span class="summary-sig-name">name</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_container_or_none"></a><span class="summary-sig-name">get_container_or_none</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type</span>)</span><br />
+      returns reference to the class declaration or None</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.get_container_or_none">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_my_case"></a><span class="summary-sig-name">is_my_case</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type</span>)</span><br />
+      checks, whether type is STD container or not</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.is_my_case">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="class_declaration"></a><span class="summary-sig-name">class_declaration</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type</span>)</span><br />
+      returns reference to the class declaration</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.class_declaration">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_sequence"></a><span class="summary-sig-name">is_sequence</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.is_sequence">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_mapping"></a><span class="summary-sig-name">is_mapping</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.is_mapping">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="element_type"></a><span class="summary-sig-name">element_type</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type</span>)</span><br />
+      returns reference to the class value\mapped type declaration</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.element_type">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="key_type"></a><span class="summary-sig-name">key_type</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type</span>)</span><br />
+      returns reference to the class key type declaration</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.key_type">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygccxml.declarations.container_traits.container_traits_impl_t-class.html#remove_defaults" class="summary-sig-name">remove_defaults</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type_or_string</span>)</span><br />
+      remove template defaults from a template class instantiation</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.remove_defaults">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">container_name</span>,
+        <span class="sig-arg">element_type_index</span>,
+        <span class="sig-arg">element_type_typedef</span>,
+        <span class="sig-arg">defaults_remover</span>,
+        <span class="sig-arg">key_type_index</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">key_type_typedef</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+container_name - std container name
+element_type_index - position of value\mapped type within template
+  arguments list
+element_type_typedef - class typedef to the value\mapped type
+key_type_index - position of key type within template arguments list
+key_type_typedef - class typedef to the key type        
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="remove_defaults"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">remove_defaults</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">type_or_string</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pygccxml.declarations.container_traits-pysrc.html#container_traits_impl_t.remove_defaults">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+remove template defaults from a template class instantiation
+
+For example:
+    std::vector&lt; int, std::allocator&lt; int &gt; &gt; 
+will become
+    std::vector&lt; int &gt; 
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Oct 20 09:00:18 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

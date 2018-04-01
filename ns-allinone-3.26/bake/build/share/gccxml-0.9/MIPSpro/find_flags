@@ -1,0 +1,70 @@
+#!/bin/sh
+#=============================================================================
+#
+#  Program:   GCC-XML
+#  Module:    find_flags
+#  Language:  C++
+#  Date:      $Date$
+#  Version:   $Revision$
+#
+#  Copyright (c) 2002 Kitware, Inc., Insight Consortium.  All rights reserved.
+#  See Copyright.txt for details.
+#
+#     This software is distributed WITHOUT ANY WARRANTY; without even 
+#     the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+#     PURPOSE.  See the above copyright notices for more information.
+#
+#=============================================================================
+
+# Find the MIPSPro executable name.
+if test "x$1" = "x" ; then
+  if test "x${CXX}" = "x" ; then
+    CXX=CC
+  fi
+else 
+  CXX="$1"
+  shift
+  CXXFLAGS="$@"
+fi
+
+SELFDIR=`cd "\`dirname \"$0\"\`";pwd`
+
+# This test input file checks for some builtin definitions in the
+# compiler that are not displayed by the -v option.  Its list was
+# obtained by running "strings /usr/lib32/cmplrs/fecc" and testing for
+# definitions with a giant version of the string below.
+DEFS_FILE="${SELFDIR}/mipspro_defs.cxx"
+
+# Find the macro definition options.
+MACROS=`
+${CXX} ${CXXFLAGS} -E -v "${DEFS_FILE}" 2>&1 |
+sed -n '/_COMPILER_VERSION/{s| '"${DEFS_FILE}"'.*$||
+s/ -/\\
+-/g;p;}' |
+sed -n '/^-D.*$/{s/-D\([^=]*\)=\([^ ]\{1,\} .*\)/-D\1='\''\2'\''/;p;}' |
+sed -n 'H;${g;s/\n/ /g;p;}'`
+
+# Find the internally defined macros.
+LANGSTD=`
+${CXX} ${CXXFLAGS} -E -v "${DEFS_FILE}" 2>&1 |
+sed -n '/^D/ {s/^D/-D/;s/ /=/;p;}' |
+sed -n 'H;${g;s/\n/ /g;p;}'`
+
+# Find the include path options.
+INCLUDES=`
+${CXX} ${CXXFLAGS} -E -v "${DEFS_FILE}" 2>&1 |
+sed -n '/_COMPILER_VERSION/{s| '"${DEFS_FILE}"'.*$||
+s/ -/\\
+-/g;p;}' |
+sed -n '/^-I.*$/{p;}' |
+sed -n 'H;${g;s/\n/ /g;p;}'`
+
+# The support headers are located where this script is.
+SELFPATH=`echo $0 | sed -n '/\//{s/\/find_flags//;p;}'`
+if test "x$SELFPATH" = "x" ; then SELFPATH="." ; fi
+SELFPATH=`cd "$SELFPATH" ; pwd`
+INCLUDES="-iwrapper\"$SELFPATH/7.3\" $INCLUDES"
+
+# Format and print out the options.
+OPTIONS="$MACROS $LANGSTD $INCLUDES"
+echo $OPTIONS

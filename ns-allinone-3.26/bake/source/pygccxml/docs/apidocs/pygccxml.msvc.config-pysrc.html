@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygccxml.msvc.config</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygccxml-module.html">Package&nbsp;pygccxml</a> ::
+        <a href="pygccxml.msvc-module.html">Package&nbsp;msvc</a> ::
+        Module&nbsp;config
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pygccxml.msvc.config-module.html">Module pygccxml.msvc.config</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">comtypes</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-op">.</tt><tt class="py-op">.</tt> <tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package pygccxml.utils=pygccxml.utils-module.html"><a title="pygccxml.utils" class="py-name" href="#" onclick="return doclink('link-0', 'utils', 'link-0');">utils</a></tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">comtypes</tt><tt class="py-op">.</tt><tt class="py-name">client</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">_winreg</tt> <tt class="py-keyword">as</tt> <tt class="py-name">win_registry</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">distutils</tt> <tt class="py-keyword">import</tt> <tt class="py-name">msvccompiler</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="binaries_searcher_t"></a><div id="binaries_searcher_t-def"><a name="L9"></a><tt class="py-lineno"> 9</tt> <a class="py-toggle" href="#" id="binaries_searcher_t-toggle" onclick="return toggle('binaries_searcher_t');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pygccxml.msvc.config.binaries_searcher_t-class.html">binaries_searcher_t</a><tt class="py-op">:</tt> </tt>
+</div><div id="binaries_searcher_t-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="binaries_searcher_t-expanded"><a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="binaries_searcher_t.get_msbsc_path"></a><div id="binaries_searcher_t.get_msbsc_path-def"><a name="L11"></a><tt class="py-lineno">11</tt> <a class="py-toggle" href="#" id="binaries_searcher_t.get_msbsc_path-toggle" onclick="return toggle('binaries_searcher_t.get_msbsc_path');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.msvc.config.binaries_searcher_t-class.html#get_msbsc_path">get_msbsc_path</a><tt class="py-op">(</tt> <tt class="py-param">self</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="binaries_searcher_t.get_msbsc_path-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="binaries_searcher_t.get_msbsc_path-expanded"><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-name">relative_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Method pygccxml.msvc.bsc.module_t.path()=pygccxml.msvc.bsc.module_t-class.html#path,Method pygccxml.msvc.bsc_impl_details.module_t.path()=pygccxml.msvc.bsc_impl_details.module_t-class.html#path"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-1', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">modules</tt><tt class="py-op">[</tt><tt class="py-name">__name__</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">__file__</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt class="py-name">absolute_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-2', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt> <tt class="py-op">(</tt><tt class="py-name">relative_path</tt><tt class="py-op">)</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-3', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Function pygccxml.declarations.call_invocation.join()=pygccxml.declarations.call_invocation-module.html#join,Method pygccxml.declarations.pattern_parser.parser_t.join()=pygccxml.declarations.pattern_parser.parser_t-class.html#join,Function pygccxml.declarations.templates.join()=pygccxml.declarations.templates-module.html#join"><a title="pygccxml.declarations.call_invocation.join
+pygccxml.declarations.pattern_parser.parser_t.join
+pygccxml.declarations.templates.join" class="py-name" href="#" onclick="return doclink('link-4', 'join', 'link-4');">join</a></tt><tt class="py-op">(</tt> <tt class="py-name">absolute_path</tt><tt class="py-op">,</tt> <tt class="py-string">'msbsc70.dll'</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="binaries_searcher_t.get_msvcr70_path"></a><div id="binaries_searcher_t.get_msvcr70_path-def"><a name="L16"></a><tt class="py-lineno">16</tt> <a class="py-toggle" href="#" id="binaries_searcher_t.get_msvcr70_path-toggle" onclick="return toggle('binaries_searcher_t.get_msvcr70_path');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.msvc.config.binaries_searcher_t-class.html#get_msvcr70_path">get_msvcr70_path</a><tt class="py-op">(</tt> <tt class="py-param">self</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="binaries_searcher_t.get_msvcr70_path-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="binaries_searcher_t.get_msvcr70_path-expanded"><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">        <tt class="py-name">relative_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-5', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">modules</tt><tt class="py-op">[</tt><tt class="py-name">__name__</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">__file__</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-name">absolute_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-6', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt> <tt class="py-op">(</tt><tt class="py-name">relative_path</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-7', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="pygccxml.declarations.call_invocation.join
+pygccxml.declarations.pattern_parser.parser_t.join
+pygccxml.declarations.templates.join" class="py-name" href="#" onclick="return doclink('link-8', 'join', 'link-4');">join</a></tt><tt class="py-op">(</tt> <tt class="py-name">absolute_path</tt><tt class="py-op">,</tt> <tt class="py-string">'msvcr70.dll'</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="binaries_searcher_t.get_msvcr_path"></a><div id="binaries_searcher_t.get_msvcr_path-def"><a name="L22"></a><tt class="py-lineno">22</tt> <a class="py-toggle" href="#" id="binaries_searcher_t.get_msvcr_path-toggle" onclick="return toggle('binaries_searcher_t.get_msvcr_path');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.msvc.config.binaries_searcher_t-class.html#get_msvcr_path">get_msvcr_path</a><tt class="py-op">(</tt> <tt class="py-param">self</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="binaries_searcher_t.get_msvcr_path-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="binaries_searcher_t.get_msvcr_path-expanded"><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt class="py-name">vss_installed</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__get_installed_vs_dirs</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt id="link-9" class="py-name"><a title="pygccxml.utils" class="py-name" href="#" onclick="return doclink('link-9', 'utils', 'link-0');">utils</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Class pygccxml.utils.fs_utils.files_walker=pygccxml.utils.fs_utils.files_walker-class.html"><a title="pygccxml.utils.fs_utils.files_walker" class="py-name" href="#" onclick="return doclink('link-10', 'files_walker', 'link-10');">files_walker</a></tt><tt class="py-op">(</tt> <tt class="py-name">vss_installed</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-string">"*.dll"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">            <tt class="py-name">f_path</tt><tt class="py-op">,</tt> <tt class="py-name">f_name</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-11', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Function pygccxml.declarations.call_invocation.split()=pygccxml.declarations.call_invocation-module.html#split,Method pygccxml.declarations.pattern_parser.parser_t.split()=pygccxml.declarations.pattern_parser.parser_t-class.html#split,Function pygccxml.declarations.templates.split()=pygccxml.declarations.templates-module.html#split"><a title="pygccxml.declarations.call_invocation.split
+pygccxml.declarations.pattern_parser.parser_t.split
+pygccxml.declarations.templates.split" class="py-name" href="#" onclick="return doclink('link-12', 'split', 'link-12');">split</a></tt><tt class="py-op">(</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">upper</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">f_name</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt> <tt class="py-string">'MSVCR'</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">f</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">(</tt> <tt class="py-string">'Unable to find msvcrXX.dll. Search path is: %s'</tt> <tt class="py-op">%</tt> <tt class="py-name">vss_installed</tt>  <tt class="py-op">)</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
+<a name="binaries_searcher_t.get_msdia_path"></a><div id="binaries_searcher_t.get_msdia_path-def"><a name="L31"></a><tt class="py-lineno">31</tt> <a class="py-toggle" href="#" id="binaries_searcher_t.get_msdia_path-toggle" onclick="return toggle('binaries_searcher_t.get_msdia_path');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.msvc.config.binaries_searcher_t-class.html#get_msdia_path">get_msdia_path</a><tt class="py-op">(</tt> <tt class="py-param">self</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="binaries_searcher_t.get_msdia_path-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="binaries_searcher_t.get_msdia_path-expanded"><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-name">vss_installed</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__get_installed_vs_dirs</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-name">msdia_dlls</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__get_msdia_dll_paths</tt><tt class="py-op">(</tt> <tt class="py-name">vss_installed</tt> <tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-number">1</tt> <tt class="py-op">==</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">msdia_dlls</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">msdia_dlls</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">            <tt class="py-comment">#TODO find the highest version and use it.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"> </tt>
+<a name="binaries_searcher_t.__get_msdia_dll_paths"></a><div id="binaries_searcher_t.__get_msdia_dll_paths-def"><a name="L40"></a><tt class="py-lineno">40</tt> <a class="py-toggle" href="#" id="binaries_searcher_t.__get_msdia_dll_paths-toggle" onclick="return toggle('binaries_searcher_t.__get_msdia_dll_paths');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.msvc.config.binaries_searcher_t-class.html#__get_msdia_dll_paths">__get_msdia_dll_paths</a><tt class="py-op">(</tt> <tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">vss_installed</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="binaries_searcher_t.__get_msdia_dll_paths-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="binaries_searcher_t.__get_msdia_dll_paths-expanded"><a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt class="py-name">msdia_dlls</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">vs</tt> <tt class="py-keyword">in</tt> <tt class="py-name">vss_installed</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">            <tt class="py-name">debug_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-13', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="pygccxml.declarations.call_invocation.join
+pygccxml.declarations.pattern_parser.parser_t.join
+pygccxml.declarations.templates.join" class="py-name" href="#" onclick="return doclink('link-14', 'join', 'link-4');">join</a></tt><tt class="py-op">(</tt> <tt class="py-name">vs</tt><tt class="py-op">,</tt> <tt class="py-string">'Common7'</tt><tt class="py-op">,</tt> <tt class="py-string">'Packages'</tt><tt class="py-op">,</tt> <tt class="py-string">'Debugger'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">            <tt id="link-15" class="py-name" targets="Method pygccxml.msvc.bsc.reader_t.files()=pygccxml.msvc.bsc.reader_t-class.html#files,Method pygccxml.msvc.bsc_impl_details.bsc_reader_t.files()=pygccxml.msvc.bsc_impl_details.bsc_reader_t-class.html#files,Method pygccxml.parser.scanner.scanner_t.files()=pygccxml.parser.scanner.scanner_t-class.html#files"><a title="pygccxml.msvc.bsc.reader_t.files
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.files
+pygccxml.parser.scanner.scanner_t.files" class="py-name" href="#" onclick="return doclink('link-15', 'files', 'link-15');">files</a></tt> <tt class="py-op">=</tt> <tt class="py-name">filter</tt><tt class="py-op">(</tt> <tt class="py-keyword">lambda</tt> <tt class="py-name">f</tt><tt class="py-op">:</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt> <tt class="py-string">'msdia'</tt> <tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt> <tt class="py-string">'.dll'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">                            <tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">listdir</tt><tt class="py-op">(</tt> <tt class="py-name">debug_dir</tt> <tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-16" class="py-name"><a title="pygccxml.msvc.bsc.reader_t.files
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.files
+pygccxml.parser.scanner.scanner_t.files" class="py-name" href="#" onclick="return doclink('link-16', 'files', 'link-15');">files</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">            <tt class="py-name">msdia_dlls</tt><tt class="py-op">.</tt><tt class="py-name">extend</tt><tt class="py-op">(</tt><tt class="py-op">[</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-17', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="pygccxml.declarations.call_invocation.join
+pygccxml.declarations.pattern_parser.parser_t.join
+pygccxml.declarations.templates.join" class="py-name" href="#" onclick="return doclink('link-18', 'join', 'link-4');">join</a></tt><tt class="py-op">(</tt> <tt class="py-name">debug_dir</tt><tt class="py-op">,</tt> <tt class="py-name">f</tt> <tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt id="link-19" class="py-name"><a title="pygccxml.msvc.bsc.reader_t.files
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.files
+pygccxml.parser.scanner.scanner_t.files" class="py-name" href="#" onclick="return doclink('link-19', 'files', 'link-15');">files</a></tt> <tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">msdia_dlls</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">(</tt> <tt class="py-string">'pygccxml unable to find out msdiaXX.dll location'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">msdia_dlls</tt> </tt>
+</div><a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"> </tt>
+<a name="binaries_searcher_t.__get_installed_vs_dirs"></a><div id="binaries_searcher_t.__get_installed_vs_dirs-def"><a name="L53"></a><tt class="py-lineno">53</tt> <a class="py-toggle" href="#" id="binaries_searcher_t.__get_installed_vs_dirs-toggle" onclick="return toggle('binaries_searcher_t.__get_installed_vs_dirs');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.msvc.config.binaries_searcher_t-class.html#__get_installed_vs_dirs">__get_installed_vs_dirs</a><tt class="py-op">(</tt> <tt class="py-param">self</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="binaries_searcher_t.__get_installed_vs_dirs-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="binaries_searcher_t.__get_installed_vs_dirs-expanded"><a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt class="py-name">vs_reg_path</tt> <tt class="py-op">=</tt> <tt class="py-string">'Software\Microsoft\VisualStudio\SxS\VS7'</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt id="link-20" class="py-name" targets="Variable pygccxml.declarations.enumeration.enumeration_t.values=pygccxml.declarations.enumeration.enumeration_t-class.html#values"><a title="pygccxml.declarations.enumeration.enumeration_t.values" class="py-name" href="#" onclick="return doclink('link-20', 'values', 'link-20');">values</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Method pygccxml.msvc.config.binaries_searcher_t.read_values()=pygccxml.msvc.config.binaries_searcher_t-class.html#read_values"><a title="pygccxml.msvc.config.binaries_searcher_t.read_values" class="py-name" href="#" onclick="return doclink('link-21', 'read_values', 'link-21');">read_values</a></tt><tt class="py-op">(</tt> <tt class="py-name">win_registry</tt><tt class="py-op">.</tt><tt class="py-name">HKEY_LOCAL_MACHINE</tt><tt class="py-op">,</tt> <tt class="py-name">vs_reg_path</tt> <tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">[</tt> <tt id="link-22" class="py-name"><a title="pygccxml.declarations.enumeration.enumeration_t.values" class="py-name" href="#" onclick="return doclink('link-22', 'values', 'link-20');">values</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="pygccxml.declarations.enumeration.enumeration_t.values" class="py-name" href="#" onclick="return doclink('link-23', 'values', 'link-20');">values</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">]</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"> </tt>
+<a name="binaries_searcher_t.read_keys"></a><div id="binaries_searcher_t.read_keys-def"><a name="L58"></a><tt class="py-lineno">58</tt> <a class="py-toggle" href="#" id="binaries_searcher_t.read_keys-toggle" onclick="return toggle('binaries_searcher_t.read_keys');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.msvc.config.binaries_searcher_t-class.html#read_keys">read_keys</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">base</tt><tt class="py-op">,</tt> <tt class="py-param">key</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="binaries_searcher_t.read_keys-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="binaries_searcher_t.read_keys-expanded"><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">msvccompiler</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method pygccxml.msvc.config.binaries_searcher_t.read_keys()=pygccxml.msvc.config.binaries_searcher_t-class.html#read_keys"><a title="pygccxml.msvc.config.binaries_searcher_t.read_keys" class="py-name" href="#" onclick="return doclink('link-24', 'read_keys', 'link-24');">read_keys</a></tt><tt class="py-op">(</tt><tt id="link-25" class="py-name" targets="Variable pygccxml.declarations.cpptypes.compound_t.base=pygccxml.declarations.cpptypes.compound_t-class.html#base"><a title="pygccxml.declarations.cpptypes.compound_t.base" class="py-name" href="#" onclick="return doclink('link-25', 'base', 'link-25');">base</a></tt><tt class="py-op">,</tt> <tt id="link-26" class="py-name" targets="Method pygccxml.parser.declarations_cache.record_t.key()=pygccxml.parser.declarations_cache.record_t-class.html#key"><a title="pygccxml.parser.declarations_cache.record_t.key" class="py-name" href="#" onclick="return doclink('link-26', 'key', 'link-26');">key</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"> </tt>
+<a name="binaries_searcher_t.read_values"></a><div id="binaries_searcher_t.read_values-def"><a name="L61"></a><tt class="py-lineno">61</tt> <a class="py-toggle" href="#" id="binaries_searcher_t.read_values-toggle" onclick="return toggle('binaries_searcher_t.read_values');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.msvc.config.binaries_searcher_t-class.html#read_values">read_values</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">base</tt><tt class="py-op">,</tt> <tt class="py-param">key</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="binaries_searcher_t.read_values-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="binaries_searcher_t.read_values-expanded"><a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">msvccompiler</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="pygccxml.msvc.config.binaries_searcher_t.read_values" class="py-name" href="#" onclick="return doclink('link-27', 'read_values', 'link-21');">read_values</a></tt><tt class="py-op">(</tt><tt id="link-28" class="py-name"><a title="pygccxml.declarations.cpptypes.compound_t.base" class="py-name" href="#" onclick="return doclink('link-28', 'base', 'link-25');">base</a></tt><tt class="py-op">,</tt> <tt id="link-29" class="py-name"><a title="pygccxml.parser.declarations_cache.record_t.key" class="py-name" href="#" onclick="return doclink('link-29', 'key', 'link-26');">key</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt id="link-30" class="py-name" targets="Variable pygccxml.msvc.config.bs=pygccxml.msvc.config-module.html#bs"><a title="pygccxml.msvc.config.bs" class="py-name" href="#" onclick="return doclink('link-30', 'bs', 'link-30');">bs</a></tt> <tt class="py-op">=</tt> <tt id="link-31" class="py-name" targets="Class pygccxml.msvc.config.binaries_searcher_t=pygccxml.msvc.config.binaries_searcher_t-class.html"><a title="pygccxml.msvc.config.binaries_searcher_t" class="py-name" href="#" onclick="return doclink('link-31', 'binaries_searcher_t', 'link-31');">binaries_searcher_t</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt id="link-32" class="py-name" targets="Variable pygccxml.msvc.config.msdia_path=pygccxml.msvc.config-module.html#msdia_path"><a title="pygccxml.msvc.config.msdia_path" class="py-name" href="#" onclick="return doclink('link-32', 'msdia_path', 'link-32');">msdia_path</a></tt> <tt class="py-op">=</tt> <tt id="link-33" class="py-name"><a title="pygccxml.msvc.config.bs" class="py-name" href="#" onclick="return doclink('link-33', 'bs', 'link-30');">bs</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Method pygccxml.msvc.config.binaries_searcher_t.get_msdia_path()=pygccxml.msvc.config.binaries_searcher_t-class.html#get_msdia_path"><a title="pygccxml.msvc.config.binaries_searcher_t.get_msdia_path" class="py-name" href="#" onclick="return doclink('link-34', 'get_msdia_path', 'link-34');">get_msdia_path</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"><tt class="py-keyword">print</tt> <tt class="py-string">'msdia path: '</tt><tt class="py-op">,</tt> <tt id="link-35" class="py-name"><a title="pygccxml.msvc.config.msdia_path" class="py-name" href="#" onclick="return doclink('link-35', 'msdia_path', 'link-32');">msdia_path</a></tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"><tt id="link-36" class="py-name" targets="Variable pygccxml.msvc.config.msbsc_path=pygccxml.msvc.config-module.html#msbsc_path"><a title="pygccxml.msvc.config.msbsc_path" class="py-name" href="#" onclick="return doclink('link-36', 'msbsc_path', 'link-36');">msbsc_path</a></tt> <tt class="py-op">=</tt> <tt id="link-37" class="py-name"><a title="pygccxml.msvc.config.bs" class="py-name" href="#" onclick="return doclink('link-37', 'bs', 'link-30');">bs</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Method pygccxml.msvc.config.binaries_searcher_t.get_msbsc_path()=pygccxml.msvc.config.binaries_searcher_t-class.html#get_msbsc_path"><a title="pygccxml.msvc.config.binaries_searcher_t.get_msbsc_path" class="py-name" href="#" onclick="return doclink('link-38', 'get_msbsc_path', 'link-38');">get_msbsc_path</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"><tt class="py-keyword">print</tt> <tt class="py-string">'msbsc path: '</tt><tt class="py-op">,</tt> <tt id="link-39" class="py-name"><a title="pygccxml.msvc.config.msbsc_path" class="py-name" href="#" onclick="return doclink('link-39', 'msbsc_path', 'link-36');">msbsc_path</a></tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"><tt id="link-40" class="py-name" targets="Variable pygccxml.msvc.config.msvcr_path=pygccxml.msvc.config-module.html#msvcr_path"><a title="pygccxml.msvc.config.msvcr_path" class="py-name" href="#" onclick="return doclink('link-40', 'msvcr_path', 'link-40');">msvcr_path</a></tt> <tt class="py-op">=</tt> <tt id="link-41" class="py-name"><a title="pygccxml.msvc.config.bs" class="py-name" href="#" onclick="return doclink('link-41', 'bs', 'link-30');">bs</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method pygccxml.msvc.config.binaries_searcher_t.get_msvcr_path()=pygccxml.msvc.config.binaries_searcher_t-class.html#get_msvcr_path"><a title="pygccxml.msvc.config.binaries_searcher_t.get_msvcr_path" class="py-name" href="#" onclick="return doclink('link-42', 'get_msvcr_path', 'link-42');">get_msvcr_path</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"><tt class="py-keyword">print</tt> <tt class="py-string">'msvcr path: '</tt><tt class="py-op">,</tt> <tt id="link-43" class="py-name"><a title="pygccxml.msvc.config.msvcr_path" class="py-name" href="#" onclick="return doclink('link-43', 'msvcr_path', 'link-40');">msvcr_path</a></tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Oct 20 09:00:24 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

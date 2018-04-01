@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 03/06/17 15:22:23 by SUMO duarouter Version 0.28.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="osm.net.xml"/>
+        <trip-files value="osm.bus.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="osm.bus.rou.xml"/>
+    </output>
+
+    <processing>
+        <ignore-errors value="true"/>
+    </processing>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+  <!--
+    <vType id="bus" vClass="bus"/>
+    <vehicle id="bus178" type="bus" depart="56.94" departLane="best">
+        <routeDistribution last="0">
+            <route cost="68.26" probability="1.00000000" edges="-142830973#1 -142830973#0 -2426378#3 -2426378#2 -2426378#1 -2426378#0 -2426380#2 -2426380#1 -2426380#0 -256479432#0"/>
+        </routeDistribution>
+    </vehicle>
+  -->  
+</routes>

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!-- generated on 2017-03-06 15:22:23.147000 by $Id: route2trips.py 20433 2016-04-13 08:00:14Z behrisch $-->
+
+<trips>
+  <!--  <vType id="bus" vClass="car"/>
+    <trip id="bus" depart="30" departLane="best" from="70004372#0" to="-156942328#0" type="bus"/>
+  -->
+  <vType id="BUS" accel="2.6" decel="4.5" sigma="0" length="12" minGap="3" maxSpeed="70" color="1,1,0" guiShape="bus"/>
+
+
+  <vehicle id="0" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="1" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="2" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="3" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="4" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="5" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+<!--   <vehicle id="6" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="7" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="8" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="9" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="10" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle>
+
+  <vehicle id="11" type="BUS" depart="20" color="1,1,0">
+      <route edges="70004372#0 22282912#1 -156942328#3 -156942328#0 "/>
+      <stop busStop="busstop1" duration="1"/>
+      <stop busStop="busstop2" duration="5"/>
+  </vehicle> -->
+
+</trips>

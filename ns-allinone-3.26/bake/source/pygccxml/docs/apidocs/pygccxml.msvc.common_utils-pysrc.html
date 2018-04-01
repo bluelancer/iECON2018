@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygccxml.msvc.common_utils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygccxml-module.html">Package&nbsp;pygccxml</a> ::
+        <a href="pygccxml.msvc-module.html">Package&nbsp;msvc</a> ::
+        Module&nbsp;common_utils
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pygccxml.msvc.common_utils-module.html">Module pygccxml.msvc.common_utils</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">ctypes</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module pygccxml.msvc.config=pygccxml.msvc.config-module.html,Module pygccxml.parser.config=pygccxml.parser.config-module.html"><a title="pygccxml.msvc.config
+pygccxml.parser.config" class="py-name" href="#" onclick="return doclink('link-0', 'config', 'link-0');">config</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">msvc_cfg</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="UNDECORATE_NAME_OPTIONS"></a><div id="UNDECORATE_NAME_OPTIONS-def"><a name="L5"></a><tt class="py-lineno"> 5</tt> <a class="py-toggle" href="#" id="UNDECORATE_NAME_OPTIONS-toggle" onclick="return toggle('UNDECORATE_NAME_OPTIONS');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html">UNDECORATE_NAME_OPTIONS</a><tt class="py-op">:</tt> </tt>
+</div><div id="UNDECORATE_NAME_OPTIONS-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="UNDECORATE_NAME_OPTIONS-expanded"><a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">    <tt id="link-1" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_COMPLETE=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_COMPLETE"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_COMPLETE" class="py-name" href="#" onclick="return doclink('link-1', 'UNDNAME_COMPLETE', 'link-1');">UNDNAME_COMPLETE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0000</tt> <tt class="py-comment">#Enables full undecoration.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line">    <tt id="link-2" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_LEADING_UNDERSCORES=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_LEADING_UNDERSCORES"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_LEADING_UNDERSCORES" class="py-name" href="#" onclick="return doclink('link-2', 'UNDNAME_NO_LEADING_UNDERSCORES', 'link-2');">UNDNAME_NO_LEADING_UNDERSCORES</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0001</tt> <tt class="py-comment">#Removes leading underscores from Microsoft extended keywords.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_MS_KEYWORDS=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_MS_KEYWORDS"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_MS_KEYWORDS" class="py-name" href="#" onclick="return doclink('link-3', 'UNDNAME_NO_MS_KEYWORDS', 'link-3');">UNDNAME_NO_MS_KEYWORDS</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0002</tt> <tt class="py-comment">#Disables expansion of Microsoft extended keywords.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_FUNCTION_RETURNS=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_FUNCTION_RETURNS"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_FUNCTION_RETURNS" class="py-name" href="#" onclick="return doclink('link-4', 'UNDNAME_NO_FUNCTION_RETURNS', 'link-4');">UNDNAME_NO_FUNCTION_RETURNS</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0004</tt> <tt class="py-comment">#Disables expansion of return type for primary declaration.</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ALLOCATION_MODEL=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_ALLOCATION_MODEL"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ALLOCATION_MODEL" class="py-name" href="#" onclick="return doclink('link-5', 'UNDNAME_NO_ALLOCATION_MODEL', 'link-5');">UNDNAME_NO_ALLOCATION_MODEL</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0008</tt> <tt class="py-comment">#Disables expansion of the declaration model.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">    <tt id="link-6" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ALLOCATION_LANGUAGE=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_ALLOCATION_LANGUAGE"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ALLOCATION_LANGUAGE" class="py-name" href="#" onclick="return doclink('link-6', 'UNDNAME_NO_ALLOCATION_LANGUAGE', 'link-6');">UNDNAME_NO_ALLOCATION_LANGUAGE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0010</tt> <tt class="py-comment">#Disables expansion of the declaration language specifier.</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">    <tt id="link-7" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_RESERVED1=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_RESERVED1"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_RESERVED1" class="py-name" href="#" onclick="return doclink('link-7', 'UNDNAME_RESERVED1', 'link-7');">UNDNAME_RESERVED1</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0020</tt> <tt class="py-comment">#RESERVED.</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_RESERVED2=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_RESERVED2"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_RESERVED2" class="py-name" href="#" onclick="return doclink('link-8', 'UNDNAME_RESERVED2', 'link-8');">UNDNAME_RESERVED2</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0040</tt> <tt class="py-comment">#RESERVED.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt id="link-9" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_THISTYPE=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_THISTYPE"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_THISTYPE" class="py-name" href="#" onclick="return doclink('link-9', 'UNDNAME_NO_THISTYPE', 'link-9');">UNDNAME_NO_THISTYPE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0060</tt> <tt class="py-comment">#Disables all modifiers on the this type.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt id="link-10" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ACCESS_SPECIFIERS=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_ACCESS_SPECIFIERS"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ACCESS_SPECIFIERS" class="py-name" href="#" onclick="return doclink('link-10', 'UNDNAME_NO_ACCESS_SPECIFIERS', 'link-10');">UNDNAME_NO_ACCESS_SPECIFIERS</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0080</tt> <tt class="py-comment">#Disables expansion of access specifiers for members.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_THROW_SIGNATURES=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_THROW_SIGNATURES"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_THROW_SIGNATURES" class="py-name" href="#" onclick="return doclink('link-11', 'UNDNAME_NO_THROW_SIGNATURES', 'link-11');">UNDNAME_NO_THROW_SIGNATURES</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0100</tt> <tt class="py-comment">#Disables expansion of "throw-signatures" for functions and pointers to functions.</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt id="link-12" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_MEMBER_TYPE=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_MEMBER_TYPE"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_MEMBER_TYPE" class="py-name" href="#" onclick="return doclink('link-12', 'UNDNAME_NO_MEMBER_TYPE', 'link-12');">UNDNAME_NO_MEMBER_TYPE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0200</tt> <tt class="py-comment">#Disables expansion of static or virtual members.</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">    <tt id="link-13" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_RETURN_UDT_MODEL=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_RETURN_UDT_MODEL"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_RETURN_UDT_MODEL" class="py-name" href="#" onclick="return doclink('link-13', 'UNDNAME_NO_RETURN_UDT_MODEL', 'link-13');">UNDNAME_NO_RETURN_UDT_MODEL</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0400</tt> <tt class="py-comment">#Disables expansion of the Microsoft model for UDT returns.</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">    <tt id="link-14" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_32_BIT_DECODE=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_32_BIT_DECODE"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_32_BIT_DECODE" class="py-name" href="#" onclick="return doclink('link-14', 'UNDNAME_32_BIT_DECODE', 'link-14');">UNDNAME_32_BIT_DECODE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x0800</tt> <tt class="py-comment">#Undecorates 32-bit decorated names.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt id="link-15" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NAME_ONLY=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NAME_ONLY"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NAME_ONLY" class="py-name" href="#" onclick="return doclink('link-15', 'UNDNAME_NAME_ONLY', 'link-15');">UNDNAME_NAME_ONLY</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x1000</tt> <tt class="py-comment">#Gets only the name for primary declaration; returns just [scope::]name. Expands template params.</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">    <tt id="link-16" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_TYPE_ONLY=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_TYPE_ONLY"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_TYPE_ONLY" class="py-name" href="#" onclick="return doclink('link-16', 'UNDNAME_TYPE_ONLY', 'link-16');">UNDNAME_TYPE_ONLY</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x2000</tt> <tt class="py-comment">#Input is just a type encoding; composes an abstract declarator.</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt id="link-17" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_HAVE_PARAMETERS=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_HAVE_PARAMETERS"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_HAVE_PARAMETERS" class="py-name" href="#" onclick="return doclink('link-17', 'UNDNAME_HAVE_PARAMETERS', 'link-17');">UNDNAME_HAVE_PARAMETERS</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x4000</tt> <tt class="py-comment">#The real template parameters are available.</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt id="link-18" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ECSU=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_ECSU"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ECSU" class="py-name" href="#" onclick="return doclink('link-18', 'UNDNAME_NO_ECSU', 'link-18');">UNDNAME_NO_ECSU</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x8000</tt> <tt class="py-comment">#Suppresses enum/class/struct/union.</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">    <tt id="link-19" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_IDENT_CHAR_CHECK=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_IDENT_CHAR_CHECK"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_IDENT_CHAR_CHECK" class="py-name" href="#" onclick="return doclink('link-19', 'UNDNAME_NO_IDENT_CHAR_CHECK', 'link-19');">UNDNAME_NO_IDENT_CHAR_CHECK</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x10000</tt> <tt class="py-comment">#Suppresses check for valid identifier characters.</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt id="link-20" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_PTR64=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_NO_PTR64"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_PTR64" class="py-name" href="#" onclick="return doclink('link-20', 'UNDNAME_NO_PTR64', 'link-20');">UNDNAME_NO_PTR64</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x20000</tt> <tt class="py-comment">#Does not include ptr64 in output.</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt id="link-21" class="py-name" targets="Variable pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_SCOPES_ONLY=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html#UNDNAME_SCOPES_ONLY"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_SCOPES_ONLY" class="py-name" href="#" onclick="return doclink('link-21', 'UNDNAME_SCOPES_ONLY', 'link-21');">UNDNAME_SCOPES_ONLY</a></tt> <tt class="py-op">=</tt> <tt id="link-22" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_LEADING_UNDERSCORES" class="py-name" href="#" onclick="return doclink('link-22', 'UNDNAME_NO_LEADING_UNDERSCORES', 'link-2');">UNDNAME_NO_LEADING_UNDERSCORES</a></tt> \ </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">                          <tt class="py-op">|</tt> <tt id="link-23" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_MS_KEYWORDS" class="py-name" href="#" onclick="return doclink('link-23', 'UNDNAME_NO_MS_KEYWORDS', 'link-3');">UNDNAME_NO_MS_KEYWORDS</a></tt> \ </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">                          <tt class="py-op">|</tt> <tt id="link-24" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_FUNCTION_RETURNS" class="py-name" href="#" onclick="return doclink('link-24', 'UNDNAME_NO_FUNCTION_RETURNS', 'link-4');">UNDNAME_NO_FUNCTION_RETURNS</a></tt> \ </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">                          <tt class="py-op">|</tt> <tt id="link-25" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ALLOCATION_MODEL" class="py-name" href="#" onclick="return doclink('link-25', 'UNDNAME_NO_ALLOCATION_MODEL', 'link-5');">UNDNAME_NO_ALLOCATION_MODEL</a></tt> \ </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">                          <tt class="py-op">|</tt> <tt id="link-26" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ALLOCATION_LANGUAGE" class="py-name" href="#" onclick="return doclink('link-26', 'UNDNAME_NO_ALLOCATION_LANGUAGE', 'link-6');">UNDNAME_NO_ALLOCATION_LANGUAGE</a></tt> \ </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">                          <tt class="py-op">|</tt> <tt id="link-27" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ACCESS_SPECIFIERS" class="py-name" href="#" onclick="return doclink('link-27', 'UNDNAME_NO_ACCESS_SPECIFIERS', 'link-10');">UNDNAME_NO_ACCESS_SPECIFIERS</a></tt> \ </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">                          <tt class="py-op">|</tt> <tt id="link-28" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_THROW_SIGNATURES" class="py-name" href="#" onclick="return doclink('link-28', 'UNDNAME_NO_THROW_SIGNATURES', 'link-11');">UNDNAME_NO_THROW_SIGNATURES</a></tt> \ </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">                          <tt class="py-op">|</tt> <tt id="link-29" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_MEMBER_TYPE" class="py-name" href="#" onclick="return doclink('link-29', 'UNDNAME_NO_MEMBER_TYPE', 'link-12');">UNDNAME_NO_MEMBER_TYPE</a></tt> \ </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">                          <tt class="py-op">|</tt> <tt id="link-30" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ECSU" class="py-name" href="#" onclick="return doclink('link-30', 'UNDNAME_NO_ECSU', 'link-18');">UNDNAME_NO_ECSU</a></tt> \ </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">                          <tt class="py-op">|</tt> <tt id="link-31" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_IDENT_CHAR_CHECK" class="py-name" href="#" onclick="return doclink('link-31', 'UNDNAME_NO_IDENT_CHAR_CHECK', 'link-19');">UNDNAME_NO_IDENT_CHAR_CHECK</a></tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-comment">#__unDName definition was taken from:</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#http://www.tech-archive.net/Archive/VC/microsoft.public.vc.language/2006-02/msg00754.html</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt id="link-32" class="py-name" targets="Variable pygccxml.msvc.common_utils.msvcrxx=pygccxml.msvc.common_utils-module.html#msvcrxx"><a title="pygccxml.msvc.common_utils.msvcrxx" class="py-name" href="#" onclick="return doclink('link-32', 'msvcrxx', 'link-32');">msvcrxx</a></tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">CDLL</tt><tt class="py-op">(</tt> <tt class="py-name">msvc_cfg</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Variable pygccxml.msvc.config.msvcr_path=pygccxml.msvc.config-module.html#msvcr_path"><a title="pygccxml.msvc.config.msvcr_path" class="py-name" href="#" onclick="return doclink('link-33', 'msvcr_path', 'link-33');">msvcr_path</a></tt><tt class="py-op">,</tt> <tt class="py-name">mode</tt><tt class="py-op">=</tt><tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">RTLD_GLOBAL</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"><tt class="py-name">free_type</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">CFUNCTYPE</tt><tt class="py-op">(</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_void_p</tt> <tt class="py-op">)</tt> <tt class="py-comment">#free type</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt class="py-name">malloc_type</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">CFUNCTYPE</tt><tt class="py-op">(</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_void_p</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_uint</tt> <tt class="py-op">)</tt> <tt class="py-comment">#malloc type</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt id="link-34" class="py-name" targets="Variable pygccxml.msvc.common_utils.__unDName=pygccxml.msvc.common_utils-module.html#__unDName"><a title="pygccxml.msvc.common_utils.__unDName" class="py-name" href="#" onclick="return doclink('link-34', '__unDName', 'link-34');">__unDName</a></tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="pygccxml.msvc.common_utils.msvcrxx" class="py-name" href="#" onclick="return doclink('link-35', 'msvcrxx', 'link-32');">msvcrxx</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="pygccxml.msvc.common_utils.__unDName" class="py-name" href="#" onclick="return doclink('link-36', '__unDName', 'link-34');">__unDName</a></tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt id="link-37" class="py-name"><a title="pygccxml.msvc.common_utils.__unDName" class="py-name" href="#" onclick="return doclink('link-37', '__unDName', 'link-34');">__unDName</a></tt><tt class="py-op">.</tt><tt class="py-name">argtypes</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_char_p</tt> <tt class="py-comment">#undecorated name</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">                       <tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_char_p</tt> <tt class="py-comment">#decorated name</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">                       <tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_int</tt> <tt class="py-comment">#sizeof undecorated name</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">                       <tt class="py-op">,</tt> <tt class="py-name">malloc_type</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">                       <tt class="py-op">,</tt> <tt class="py-name">free_type</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">                       <tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_ushort</tt> <tt class="py-comment">#flags</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">                     <tt class="py-op">]</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt id="link-38" class="py-name"><a title="pygccxml.msvc.common_utils.__unDName" class="py-name" href="#" onclick="return doclink('link-38', '__unDName', 'link-34');">__unDName</a></tt><tt class="py-op">.</tt><tt class="py-name">restype</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_char_p</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"> </tt>
+<a name="undecorate_name"></a><div id="undecorate_name-def"><a name="L57"></a><tt class="py-lineno">57</tt> <a class="py-toggle" href="#" id="undecorate_name-toggle" onclick="return toggle('undecorate_name');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.msvc.common_utils-module.html#undecorate_name">undecorate_name</a><tt class="py-op">(</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">options</tt><tt class="py-op">=</tt><tt class="py-name">None</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="undecorate_name-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="undecorate_name-expanded"><a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-39" class="py-name" targets="Function pygccxml.declarations.call_invocation.name()=pygccxml.declarations.call_invocation-module.html#name,Variable pygccxml.declarations.calldef.argument_t.name=pygccxml.declarations.calldef.argument_t-class.html#name,Method pygccxml.declarations.container_traits.container_traits_impl_t.name()=pygccxml.declarations.container_traits.container_traits_impl_t-class.html#name,Variable pygccxml.declarations.declaration.declaration_t.name=pygccxml.declarations.declaration.declaration_t-class.html#name,Variable pygccxml.declarations.matchers.declaration_matcher_t.name=pygccxml.declarations.matchers.declaration_matcher_t-class.html#name,Method pygccxml.declarations.pattern_parser.parser_t.name()=pygccxml.declarations.pattern_parser.parser_t-class.html#name,Function pygccxml.declarations.templates.name()=pygccxml.declarations.templates-module.html#name,Method pygccxml.msvc.bsc.instance_t.name()=pygccxml.msvc.bsc.instance_t-class.html#name,Method pygccxml.msvc.bsc_impl_details.instance_t.name()=pygccxml.msvc.bsc_impl_details.instance_t-class.html#name,Variable pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name=pygccxml.msvc.pdb.impl_details.full_name_splitter_t-class.html#name,Variable pygccxml.msvc.pdb.impl_details.name=pygccxml.msvc.pdb.impl_details-module.html#name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-39', 'name', 'link-39');">name</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">''</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">options</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-name">options</tt> <tt class="py-op">=</tt> <tt id="link-40" class="py-name" targets="Class pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS=pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS-class.html"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS" class="py-name" href="#" onclick="return doclink('link-40', 'UNDECORATE_NAME_OPTIONS', 'link-40');">UNDECORATE_NAME_OPTIONS</a></tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="pygccxml.msvc.common_utils.UNDECORATE_NAME_OPTIONS.UNDNAME_NO_ECSU" class="py-name" href="#" onclick="return doclink('link-41', 'UNDNAME_NO_ECSU', 'link-18');">UNDNAME_NO_ECSU</a></tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">    <tt class="py-name">buffer_size</tt> <tt class="py-op">=</tt> <tt class="py-number">1024</tt> <tt class="py-op">*</tt> <tt class="py-number">32</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">    <tt class="py-name">undecorated_name</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">create_string_buffer</tt><tt class="py-op">(</tt><tt class="py-string">'\0'</tt> <tt class="py-op">*</tt> <tt class="py-name">buffer_size</tt><tt class="py-op">)</tt> <tt class="py-comment">#should be enouph for any symbol</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">    <tt id="link-42" class="py-name"><a title="pygccxml.msvc.common_utils.__unDName" class="py-name" href="#" onclick="return doclink('link-42', '__unDName', 'link-34');">__unDName</a></tt><tt class="py-op">(</tt> <tt class="py-name">undecorated_name</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">               <tt class="py-op">,</tt> <tt id="link-43" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-43', 'name', 'link-39');">name</a></tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">               <tt class="py-op">,</tt> <tt class="py-name">buffer_size</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">               <tt class="py-op">,</tt> <tt class="py-name">malloc_type</tt><tt class="py-op">(</tt> <tt id="link-44" class="py-name"><a title="pygccxml.msvc.common_utils.msvcrxx" class="py-name" href="#" onclick="return doclink('link-44', 'msvcrxx', 'link-32');">msvcrxx</a></tt><tt class="py-op">.</tt><tt class="py-name">malloc</tt> <tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">               <tt class="py-op">,</tt> <tt class="py-name">free_type</tt><tt class="py-op">(</tt> <tt id="link-45" class="py-name"><a title="pygccxml.msvc.common_utils.msvcrxx" class="py-name" href="#" onclick="return doclink('link-45', 'msvcrxx', 'link-32');">msvcrxx</a></tt><tt class="py-op">.</tt><tt class="py-name">free</tt> <tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">               <tt class="py-op">,</tt> <tt class="py-name">options</tt> <tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">undecorated_name</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name" targets="Variable pygccxml.declarations.variable.variable_t.value=pygccxml.declarations.variable.variable_t-class.html#value"><a title="pygccxml.declarations.variable.variable_t.value" class="py-name" href="#" onclick="return doclink('link-46', 'value', 'link-46');">value</a></tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Oct 20 09:00:27 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

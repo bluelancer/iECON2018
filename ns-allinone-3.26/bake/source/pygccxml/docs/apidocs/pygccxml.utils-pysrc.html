@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygccxml.utils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygccxml-module.html">Package&nbsp;pygccxml</a> ::
+        Package&nbsp;utils
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pygccxml.utils-module.html">Package pygccxml.utils</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2004-2008 Roman Yakovenko.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Distributed under the Boost Software License, Version 1.0. (See</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># accompanying file LICENSE_1_0.txt or copy at</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># http://www.boost.org/LICENSE_1_0.txt)</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">defines logger classes and few convinience methods, not related to the declarations</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">tree</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">tempfile</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module pygccxml.utils.fs_utils=pygccxml.utils.fs_utils-module.html"><a title="pygccxml.utils.fs_utils" class="py-name" href="#" onclick="return doclink('link-0', 'fs_utils', 'link-0');">fs_utils</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class pygccxml.utils.fs_utils.files_walker=pygccxml.utils.fs_utils.files_walker-class.html"><a title="pygccxml.utils.fs_utils.files_walker" class="py-name" href="#" onclick="return doclink('link-1', 'files_walker', 'link-1');">files_walker</a></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name"><a title="pygccxml.utils.fs_utils" class="py-name" href="#" onclick="return doclink('link-2', 'fs_utils', 'link-0');">fs_utils</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class pygccxml.utils.fs_utils.directories_walker=pygccxml.utils.fs_utils.directories_walker-class.html"><a title="pygccxml.utils.fs_utils.directories_walker" class="py-name" href="#" onclick="return doclink('link-3', 'directories_walker', 'link-3');">directories_walker</a></tt> </tt>
+<a name="_create_logger_"></a><div id="_create_logger_-def"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt> <a class="py-toggle" href="#" id="_create_logger_-toggle" onclick="return toggle('_create_logger_');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils-module.html#_create_logger_">_create_logger_</a><tt class="py-op">(</tt> <tt class="py-param">name</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_create_logger_-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_create_logger_-expanded"><a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt class="py-docstring">"""implementation details"""</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable pygccxml.parser.declarations_cache.cache_base_t.logger=pygccxml.parser.declarations_cache.cache_base_t-class.html#logger"><a title="pygccxml.parser.declarations_cache.cache_base_t.logger" class="py-name" href="#" onclick="return doclink('link-4', 'logger', 'link-4');">logger</a></tt> <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">getLogger</tt><tt class="py-op">(</tt><tt id="link-5" class="py-name" targets="Function pygccxml.declarations.call_invocation.name()=pygccxml.declarations.call_invocation-module.html#name,Variable pygccxml.declarations.calldef.argument_t.name=pygccxml.declarations.calldef.argument_t-class.html#name,Method pygccxml.declarations.container_traits.container_traits_impl_t.name()=pygccxml.declarations.container_traits.container_traits_impl_t-class.html#name,Variable pygccxml.declarations.declaration.declaration_t.name=pygccxml.declarations.declaration.declaration_t-class.html#name,Variable pygccxml.declarations.matchers.declaration_matcher_t.name=pygccxml.declarations.matchers.declaration_matcher_t-class.html#name,Method pygccxml.declarations.pattern_parser.parser_t.name()=pygccxml.declarations.pattern_parser.parser_t-class.html#name,Function pygccxml.declarations.templates.name()=pygccxml.declarations.templates-module.html#name,Method pygccxml.msvc.bsc.instance_t.name()=pygccxml.msvc.bsc.instance_t-class.html#name,Method pygccxml.msvc.bsc_impl_details.instance_t.name()=pygccxml.msvc.bsc_impl_details.instance_t-class.html#name,Variable pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name=pygccxml.msvc.pdb.impl_details.full_name_splitter_t-class.html#name,Variable pygccxml.msvc.pdb.impl_details.name=pygccxml.msvc.pdb.impl_details-module.html#name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-5', 'name', 'link-5');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-name">handler</tt> <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">StreamHandler</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt class="py-comment">#handler.setFormatter( logging.Formatter( os.linesep + '%(levelname)s %(message)s' ) )</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-name">handler</tt><tt class="py-op">.</tt><tt class="py-name">setFormatter</tt><tt class="py-op">(</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">Formatter</tt><tt class="py-op">(</tt> <tt class="py-string">'%(levelname)s %(message)s'</tt> <tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">    <tt id="link-6" class="py-name"><a title="pygccxml.parser.declarations_cache.cache_base_t.logger" class="py-name" href="#" onclick="return doclink('link-6', 'logger', 'link-4');">logger</a></tt><tt class="py-op">.</tt><tt class="py-name">addHandler</tt><tt class="py-op">(</tt><tt class="py-name">handler</tt><tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt id="link-7" class="py-name"><a title="pygccxml.parser.declarations_cache.cache_base_t.logger" class="py-name" href="#" onclick="return doclink('link-7', 'logger', 'link-4');">logger</a></tt><tt class="py-op">.</tt><tt class="py-name">setLevel</tt><tt class="py-op">(</tt><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">INFO</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-8" class="py-name"><a title="pygccxml.parser.declarations_cache.cache_base_t.logger" class="py-name" href="#" onclick="return doclink('link-8', 'logger', 'link-4');">logger</a></tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="loggers"></a><div id="loggers-def"><a name="L28"></a><tt class="py-lineno"> 28</tt> <a class="py-toggle" href="#" id="loggers-toggle" onclick="return toggle('loggers');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pygccxml.utils.loggers-class.html">loggers</a><tt class="py-op">:</tt> </tt>
+</div><div id="loggers-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="loggers-expanded"><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt class="py-docstring">"""class-namespace, defines few loggers classes, used in the project"""</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt id="link-9" class="py-name" targets="Variable pygccxml.utils.loggers.cxx_parser=pygccxml.utils.loggers-class.html#cxx_parser"><a title="pygccxml.utils.loggers.cxx_parser" class="py-name" href="#" onclick="return doclink('link-9', 'cxx_parser', 'link-9');">cxx_parser</a></tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name" targets="Function pygccxml.utils._create_logger_()=pygccxml.utils-module.html#_create_logger_"><a title="pygccxml.utils._create_logger_" class="py-name" href="#" onclick="return doclink('link-10', '_create_logger_', 'link-10');">_create_logger_</a></tt><tt class="py-op">(</tt> <tt class="py-string">'pygccxml.cxx_parser'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-string">"""logger for C++ parser functionality</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-string">    If you set this logger level to DEBUG, you will be able to see the exact</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-string">    command line, used to invoke GCC-XML  and errors that occures during XML parsing</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Variable pygccxml.utils.loggers.gccxml=pygccxml.utils.loggers-class.html#gccxml"><a title="pygccxml.utils.loggers.gccxml" class="py-name" href="#" onclick="return doclink('link-11', 'gccxml', 'link-11');">gccxml</a></tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="pygccxml.utils.loggers.cxx_parser" class="py-name" href="#" onclick="return doclink('link-12', 'cxx_parser', 'link-9');">cxx_parser</a></tt> <tt class="py-comment">#backward compatability</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt id="link-13" class="py-name" targets="Variable pygccxml.utils.loggers.pdb_reader=pygccxml.utils.loggers-class.html#pdb_reader"><a title="pygccxml.utils.loggers.pdb_reader" class="py-name" href="#" onclick="return doclink('link-13', 'pdb_reader', 'link-13');">pdb_reader</a></tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="pygccxml.utils._create_logger_" class="py-name" href="#" onclick="return doclink('link-14', '_create_logger_', 'link-10');">_create_logger_</a></tt><tt class="py-op">(</tt> <tt class="py-string">'pygccxml.pdb_reader'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-string">"""logger for MS .pdb file reader functionality</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt id="link-15" class="py-name" targets="Variable pygccxml.utils.loggers.queries_engine=pygccxml.utils.loggers-class.html#queries_engine"><a title="pygccxml.utils.loggers.queries_engine" class="py-name" href="#" onclick="return doclink('link-15', 'queries_engine', 'link-15');">queries_engine</a></tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="pygccxml.utils._create_logger_" class="py-name" href="#" onclick="return doclink('link-16', '_create_logger_', 'link-10');">_create_logger_</a></tt><tt class="py-op">(</tt> <tt class="py-string">'pygccxml.queries_engine'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">    <tt class="py-string">"""logger for query engine functionality.</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-string">    If you set this logger level to DEBUG, you will be able to see what queries</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-string">    you do against declarations tree, measure performance and may be even to improve it.</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-string">    Query engine reports queries and whether they are optimized or not.</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt id="link-17" class="py-name" targets="Module pygccxml.parser.declarations_cache=pygccxml.parser.declarations_cache-module.html,Variable pygccxml.utils.loggers.declarations_cache=pygccxml.utils.loggers-class.html#declarations_cache"><a title="pygccxml.parser.declarations_cache
+pygccxml.utils.loggers.declarations_cache" class="py-name" href="#" onclick="return doclink('link-17', 'declarations_cache', 'link-17');">declarations_cache</a></tt> <tt class="py-op">=</tt> <tt id="link-18" class="py-name"><a title="pygccxml.utils._create_logger_" class="py-name" href="#" onclick="return doclink('link-18', '_create_logger_', 'link-10');">_create_logger_</a></tt><tt class="py-op">(</tt> <tt class="py-string">'pygccxml.declarations_cache'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-string">"""logger for declarations tree cache functionality</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-string">    If you set this logger level to DEBUG, you will be able to see what is exactly</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-string">    happens, when you read the declarations from cache file. You will be able to</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-string">    decide, whether it worse for you to use this or that cache strategy.</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt id="link-19" class="py-name" targets="Variable pygccxml.utils.loggers.root=pygccxml.utils.loggers-class.html#root"><a title="pygccxml.utils.loggers.root" class="py-name" href="#" onclick="return doclink('link-19', 'root', 'link-19');">root</a></tt> <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">getLogger</tt><tt class="py-op">(</tt> <tt class="py-string">'pygccxml'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-string">"""root logger exists for your convinience only"""</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt id="link-20" class="py-name" targets="Variable pygccxml.utils.loggers.all=pygccxml.utils.loggers-class.html#all"><a title="pygccxml.utils.loggers.all" class="py-name" href="#" onclick="return doclink('link-20', 'all', 'link-20');">all</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> <tt id="link-21" class="py-name"><a title="pygccxml.utils.loggers.root" class="py-name" href="#" onclick="return doclink('link-21', 'root', 'link-19');">root</a></tt><tt class="py-op">,</tt> <tt id="link-22" class="py-name"><a title="pygccxml.utils.loggers.cxx_parser" class="py-name" href="#" onclick="return doclink('link-22', 'cxx_parser', 'link-9');">cxx_parser</a></tt><tt class="py-op">,</tt> <tt id="link-23" class="py-name"><a title="pygccxml.utils.loggers.queries_engine" class="py-name" href="#" onclick="return doclink('link-23', 'queries_engine', 'link-15');">queries_engine</a></tt><tt class="py-op">,</tt> <tt id="link-24" class="py-name"><a title="pygccxml.parser.declarations_cache
+pygccxml.utils.loggers.declarations_cache" class="py-name" href="#" onclick="return doclink('link-24', 'declarations_cache', 'link-17');">declarations_cache</a></tt><tt class="py-op">,</tt> <tt id="link-25" class="py-name"><a title="pygccxml.utils.loggers.pdb_reader" class="py-name" href="#" onclick="return doclink('link-25', 'pdb_reader', 'link-13');">pdb_reader</a></tt> <tt class="py-op">]</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt class="py-string">"""contains all logger classes, defined by the class"""</tt> </tt>
+</div><a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="remove_file_no_raise"></a><div id="remove_file_no_raise-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="remove_file_no_raise-toggle" onclick="return toggle('remove_file_no_raise');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils-module.html#remove_file_no_raise">remove_file_no_raise</a><tt class="py-op">(</tt><tt class="py-param">file_name</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="remove_file_no_raise-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="remove_file_no_raise-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-docstring">"""removes file from disk, if exception is raised, it silently ignores it"""</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method pygccxml.msvc.bsc.module_t.path()=pygccxml.msvc.bsc.module_t-class.html#path,Method pygccxml.msvc.bsc_impl_details.module_t.path()=pygccxml.msvc.bsc_impl_details.module_t-class.html#path"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-26', 'path', 'link-26');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt id="link-27" class="py-name" targets="Variable pygccxml.declarations.declaration.location_t.file_name=pygccxml.declarations.declaration.location_t-class.html#file_name,Method pygccxml.msvc.bsc.definition_t.file_name()=pygccxml.msvc.bsc.definition_t-class.html#file_name,Method pygccxml.msvc.bsc_impl_details.definition_t.file_name()=pygccxml.msvc.bsc_impl_details.definition_t-class.html#file_name"><a title="pygccxml.declarations.declaration.location_t.file_name
+pygccxml.msvc.bsc.definition_t.file_name
+pygccxml.msvc.bsc_impl_details.definition_t.file_name" class="py-name" href="#" onclick="return doclink('link-27', 'file_name', 'link-27');">file_name</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt> <tt id="link-28" class="py-name"><a title="pygccxml.declarations.declaration.location_t.file_name
+pygccxml.msvc.bsc.definition_t.file_name
+pygccxml.msvc.bsc_impl_details.definition_t.file_name" class="py-name" href="#" onclick="return doclink('link-28', 'file_name', 'link-27');">file_name</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt class="py-name">error</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt id="link-29" class="py-name" targets="Class pygccxml.utils.loggers=pygccxml.utils.loggers-class.html"><a title="pygccxml.utils.loggers" class="py-name" href="#" onclick="return doclink('link-29', 'loggers', 'link-29');">loggers</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="pygccxml.utils.loggers.root" class="py-name" href="#" onclick="return doclink('link-30', 'root', 'link-19');">root</a></tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt> <tt class="py-string">"Error ocured while removing temprorary created file('%s'): %s"</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                            <tt class="py-op">%</tt> <tt class="py-op">(</tt> <tt id="link-31" class="py-name"><a title="pygccxml.declarations.declaration.location_t.file_name
+pygccxml.msvc.bsc.definition_t.file_name
+pygccxml.msvc.bsc_impl_details.definition_t.file_name" class="py-name" href="#" onclick="return doclink('link-31', 'file_name', 'link-27');">file_name</a></tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt> <tt class="py-name">error</tt> <tt class="py-op">)</tt> <tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="create_temp_file_name"></a><div id="create_temp_file_name-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="create_temp_file_name-toggle" onclick="return toggle('create_temp_file_name');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils-module.html#create_temp_file_name">create_temp_file_name</a><tt class="py-op">(</tt><tt class="py-param">suffix</tt><tt class="py-op">,</tt> <tt class="py-param">prefix</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">dir</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="create_temp_file_name-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="create_temp_file_name-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt class="py-docstring">"""small convinience function that creates temporal file.</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">    This function is a wrapper aroung Python built-in function - tempfile.mkstemp</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">prefix</tt><tt class="py-op">:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">prefix</tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">template</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">fd</tt><tt class="py-op">,</tt> <tt id="link-32" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-32', 'name', 'link-5');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">mkstemp</tt><tt class="py-op">(</tt> <tt class="py-name">suffix</tt><tt class="py-op">=</tt><tt class="py-name">suffix</tt><tt class="py-op">,</tt> <tt class="py-name">prefix</tt><tt class="py-op">=</tt><tt class="py-name">prefix</tt><tt class="py-op">,</tt> <tt class="py-name">dir</tt><tt class="py-op">=</tt><tt class="py-name">dir</tt> <tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-name">file_obj</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">fdopen</tt><tt class="py-op">(</tt> <tt class="py-name">fd</tt> <tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-name">file_obj</tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-33" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-33', 'name', 'link-5');">name</a></tt> </tt>
+</div><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="normalize_path"></a><div id="normalize_path-def"><a name="L88"></a><tt class="py-lineno"> 88</tt> <a class="py-toggle" href="#" id="normalize_path-toggle" onclick="return toggle('normalize_path');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils-module.html#normalize_path">normalize_path</a><tt class="py-op">(</tt> <tt class="py-param">some_path</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="normalize_path-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="normalize_path-expanded"><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-docstring">"""return os.path.normpath( os.path.normcase( some_path ) )"""</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-34', 'path', 'link-26');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">normpath</tt><tt class="py-op">(</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="pygccxml.msvc.bsc.module_t.path
+pygccxml.msvc.bsc_impl_details.module_t.path" class="py-name" href="#" onclick="return doclink('link-35', 'path', 'link-26');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">normcase</tt><tt class="py-op">(</tt> <tt class="py-name">some_path</tt> <tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="get_architecture"></a><div id="get_architecture-def"><a name="L92"></a><tt class="py-lineno"> 92</tt> <a class="py-toggle" href="#" id="get_architecture-toggle" onclick="return toggle('get_architecture');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils-module.html#get_architecture">get_architecture</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="get_architecture-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="get_architecture-expanded"><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">    <tt class="py-docstring">"""returns computer architecture: 32 or 64.</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">    The guess is based on maxint.</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">maxint</tt> <tt class="py-op">==</tt> <tt class="py-number">2147483647</tt><tt class="py-op">:</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-number">32</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">    <tt class="py-keyword">elif</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">maxint</tt> <tt class="py-op">==</tt> <tt class="py-number">9223372036854775807</tt><tt class="py-op">:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-number">64</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">(</tt> <tt class="py-string">"Unknown architecture"</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt>
+<a name="cached"></a><div id="cached-def"><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-comment">#The following code is cut-and-paste from this post:</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#http://groups.google.com/group/comp.lang.python/browse_thread/thread/5b71896c06bd0f76/</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#Thanks to Michele Simionato, for it</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt> <a class="py-toggle" href="#" id="cached-toggle" onclick="return toggle('cached');">-</a><tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">class</tt> <a class="py-def-name" href="pygccxml.utils.cached-class.html">cached</a><tt class="py-op">(</tt><tt class="py-base-class">property</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="cached-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="cached-expanded"><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">    <tt class="py-docstring">'Convert a method into a cached attribute'</tt> </tt>
+<a name="cached.__init__"></a><div id="cached.__init__-def"><a name="L110"></a><tt class="py-lineno">110</tt> <a class="py-toggle" href="#" id="cached.__init__-toggle" onclick="return toggle('cached.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.cached-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">method</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="cached.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="cached.__init__-expanded"><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-name">private</tt> <tt class="py-op">=</tt> <tt class="py-string">'_'</tt> <tt class="py-op">+</tt> <tt class="py-name">method</tt><tt class="py-op">.</tt><tt class="py-name">__name__</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">fget</tt><tt class="py-op">(</tt><tt class="py-param">s</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">s</tt><tt class="py-op">,</tt> <tt class="py-name">private</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                <tt id="link-36" class="py-name" targets="Variable pygccxml.declarations.variable.variable_t.value=pygccxml.declarations.variable.variable_t-class.html#value"><a title="pygccxml.declarations.variable.variable_t.value" class="py-name" href="#" onclick="return doclink('link-36', 'value', 'link-36');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-name">method</tt><tt class="py-op">(</tt><tt class="py-name">s</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                <tt class="py-name">setattr</tt><tt class="py-op">(</tt><tt class="py-name">s</tt><tt class="py-op">,</tt> <tt class="py-name">private</tt><tt class="py-op">,</tt> <tt id="link-37" class="py-name"><a title="pygccxml.declarations.variable.variable_t.value" class="py-name" href="#" onclick="return doclink('link-37', 'value', 'link-36');">value</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt id="link-38" class="py-name"><a title="pygccxml.declarations.variable.variable_t.value" class="py-name" href="#" onclick="return doclink('link-38', 'value', 'link-36');">value</a></tt> </tt>
+</div><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">fdel</tt><tt class="py-op">(</tt><tt class="py-param">s</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">            <tt class="py-keyword">del</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt class="py-name">private</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-39" class="py-name" targets="Class pygccxml.utils.cached=pygccxml.utils.cached-class.html"><a title="pygccxml.utils.cached" class="py-name" href="#" onclick="return doclink('link-39', 'cached', 'link-39');">cached</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method pygccxml.declarations.algorithm.match_declaration_t.__init__()=pygccxml.declarations.algorithm.match_declaration_t-class.html#__init__,Method pygccxml.declarations.algorithm.visit_function_has_not_been_found_t.__init__()=pygccxml.declarations.algorithm.visit_function_has_not_been_found_t-class.html#__init__,Method pygccxml.declarations.algorithms_cache.declaration_algs_cache_t.__init__()=pygccxml.declarations.algorithms_cache.declaration_algs_cache_t-class.html#__init__,Method pygccxml.declarations.algorithms_cache.type_algs_cache_t.__init__()=pygccxml.declarations.algorithms_cache.type_algs_cache_t-class.html#__init__,Method pygccxml.declarations.calldef.argument_t.__init__()=pygccxml.declarations.calldef.argument_t-class.html#__init__,Method pygccxml.declarations.calldef.calldef_t.__init__()=pygccxml.declarations.calldef.calldef_t-class.html#__init__,Method pygccxml.declarations.calldef.casting_operator_t.__init__()=pygccxml.declarations.calldef.casting_operator_t-class.html#__init__,Method pygccxml.declarations.calldef.constructor_t.__init__()=pygccxml.declarations.calldef.constructor_t-class.html#__init__,Method pygccxml.declarations.calldef.destructor_t.__init__()=pygccxml.declarations.calldef.destructor_t-class.html#__init__,Method pygccxml.declarations.calldef.free_calldef_t.__init__()=pygccxml.declarations.calldef.free_calldef_t-class.html#__init__,Method pygccxml.declarations.calldef.free_function_t.__init__()=pygccxml.declarations.calldef.free_function_t-class.html#__init__,Method pygccxml.declarations.calldef.free_operator_t.__init__()=pygccxml.declarations.calldef.free_operator_t-class.html#__init__,Method pygccxml.declarations.calldef.member_calldef_t.__init__()=pygccxml.declarations.calldef.member_calldef_t-class.html#__init__,Method pygccxml.declarations.calldef.member_function_t.__init__()=pygccxml.declarations.calldef.member_function_t-class.html#__init__,Method pygccxml.declarations.calldef.member_operator_t.__init__()=pygccxml.declarations.calldef.member_operator_t-class.html#__init__,Method pygccxml.declarations.calldef.operator_t.__init__()=pygccxml.declarations.calldef.operator_t-class.html#__init__,Method pygccxml.declarations.class_declaration.class_declaration_t.__init__()=pygccxml.declarations.class_declaration.class_declaration_t-class.html#__init__,Method pygccxml.declarations.class_declaration.class_t.__init__()=pygccxml.declarations.class_declaration.class_t-class.html#__init__,Method pygccxml.declarations.class_declaration.hierarchy_info_t.__init__()=pygccxml.declarations.class_declaration.hierarchy_info_t-class.html#__init__,Method pygccxml.declarations.container_traits.container_traits_impl_t.__init__()=pygccxml.declarations.container_traits.container_traits_impl_t-class.html#__init__,Method pygccxml.declarations.cpptypes.array_t.__init__()=pygccxml.declarations.cpptypes.array_t-class.html#__init__,Method pygccxml.declarations.cpptypes.bool_t.__init__()=pygccxml.declarations.cpptypes.bool_t-class.html#__init__,Method pygccxml.declarations.cpptypes.calldef_type_t.__init__()=pygccxml.declarations.cpptypes.calldef_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.char_t.__init__()=pygccxml.declarations.cpptypes.char_t-class.html#__init__,Method pygccxml.declarations.cpptypes.complex_double_t.__init__()=pygccxml.declarations.cpptypes.complex_double_t-class.html#__init__,Method pygccxml.declarations.cpptypes.complex_float_t.__init__()=pygccxml.declarations.cpptypes.complex_float_t-class.html#__init__,Method pygccxml.declarations.cpptypes.complex_long_double_t.__init__()=pygccxml.declarations.cpptypes.complex_long_double_t-class.html#__init__,Method pygccxml.declarations.cpptypes.compound_t.__init__()=pygccxml.declarations.cpptypes.compound_t-class.html#__init__,Method pygccxml.declarations.cpptypes.const_t.__init__()=pygccxml.declarations.cpptypes.const_t-class.html#__init__,Method pygccxml.declarations.cpptypes.declarated_t.__init__()=pygccxml.declarations.cpptypes.declarated_t-class.html#__init__,Method pygccxml.declarations.cpptypes.double_t.__init__()=pygccxml.declarations.cpptypes.double_t-class.html#__init__,Method pygccxml.declarations.cpptypes.dummy_type_t.__init__()=pygccxml.declarations.cpptypes.dummy_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.ellipsis_t.__init__()=pygccxml.declarations.cpptypes.ellipsis_t-class.html#__init__,Method pygccxml.declarations.cpptypes.float_t.__init__()=pygccxml.declarations.cpptypes.float_t-class.html#__init__,Method pygccxml.declarations.cpptypes.free_function_type_t.__init__()=pygccxml.declarations.cpptypes.free_function_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.fundamental_t.__init__()=pygccxml.declarations.cpptypes.fundamental_t-class.html#__init__,Method pygccxml.declarations.cpptypes.int_t.__init__()=pygccxml.declarations.cpptypes.int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.java_fundamental_t.__init__()=pygccxml.declarations.cpptypes.java_fundamental_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jboolean_t.__init__()=pygccxml.declarations.cpptypes.jboolean_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jbyte_t.__init__()=pygccxml.declarations.cpptypes.jbyte_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jchar_t.__init__()=pygccxml.declarations.cpptypes.jchar_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jdouble_t.__init__()=pygccxml.declarations.cpptypes.jdouble_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jfloat_t.__init__()=pygccxml.declarations.cpptypes.jfloat_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jint_t.__init__()=pygccxml.declarations.cpptypes.jint_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jlong_t.__init__()=pygccxml.declarations.cpptypes.jlong_t-class.html#__init__,Method pygccxml.declarations.cpptypes.jshort_t.__init__()=pygccxml.declarations.cpptypes.jshort_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_double_t.__init__()=pygccxml.declarations.cpptypes.long_double_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_int_t.__init__()=pygccxml.declarations.cpptypes.long_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_long_int_t.__init__()=pygccxml.declarations.cpptypes.long_long_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_long_unsigned_int_t.__init__()=pygccxml.declarations.cpptypes.long_long_unsigned_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.long_unsigned_int_t.__init__()=pygccxml.declarations.cpptypes.long_unsigned_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.member_function_type_t.__init__()=pygccxml.declarations.cpptypes.member_function_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.member_variable_type_t.__init__()=pygccxml.declarations.cpptypes.member_variable_type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.pointer_t.__init__()=pygccxml.declarations.cpptypes.pointer_t-class.html#__init__,Method pygccxml.declarations.cpptypes.reference_t.__init__()=pygccxml.declarations.cpptypes.reference_t-class.html#__init__,Method pygccxml.declarations.cpptypes.restrict_t.__init__()=pygccxml.declarations.cpptypes.restrict_t-class.html#__init__,Method pygccxml.declarations.cpptypes.short_int_t.__init__()=pygccxml.declarations.cpptypes.short_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.short_unsigned_int_t.__init__()=pygccxml.declarations.cpptypes.short_unsigned_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.signed_char_t.__init__()=pygccxml.declarations.cpptypes.signed_char_t-class.html#__init__,Method pygccxml.declarations.cpptypes.type_qualifiers_t.__init__()=pygccxml.declarations.cpptypes.type_qualifiers_t-class.html#__init__,Method pygccxml.declarations.cpptypes.type_t.__init__()=pygccxml.declarations.cpptypes.type_t-class.html#__init__,Method pygccxml.declarations.cpptypes.unknown_t.__init__()=pygccxml.declarations.cpptypes.unknown_t-class.html#__init__,Method pygccxml.declarations.cpptypes.unsigned_char_t.__init__()=pygccxml.declarations.cpptypes.unsigned_char_t-class.html#__init__,Method pygccxml.declarations.cpptypes.unsigned_int_t.__init__()=pygccxml.declarations.cpptypes.unsigned_int_t-class.html#__init__,Method pygccxml.declarations.cpptypes.void_t.__init__()=pygccxml.declarations.cpptypes.void_t-class.html#__init__,Method pygccxml.declarations.cpptypes.volatile_t.__init__()=pygccxml.declarations.cpptypes.volatile_t-class.html#__init__,Method pygccxml.declarations.cpptypes.wchar_t.__init__()=pygccxml.declarations.cpptypes.wchar_t-class.html#__init__,Method pygccxml.declarations.decl_factory.decl_factory_t.__init__()=pygccxml.declarations.decl_factory.decl_factory_t-class.html#__init__,Method pygccxml.declarations.decl_printer.decl_printer_t.__init__()=pygccxml.declarations.decl_printer.decl_printer_t-class.html#__init__,Method pygccxml.declarations.decl_visitor.decl_visitor_t.__init__()=pygccxml.declarations.decl_visitor.decl_visitor_t-class.html#__init__,Method pygccxml.declarations.declaration.declaration_t.__init__()=pygccxml.declarations.declaration.declaration_t-class.html#__init__,Method pygccxml.declarations.declaration.location_t.__init__()=pygccxml.declarations.declaration.location_t-class.html#__init__,Method pygccxml.declarations.dependencies.dependency_info_t.__init__()=pygccxml.declarations.dependencies.dependency_info_t-class.html#__init__,Method pygccxml.declarations.enumeration.enumeration_t.__init__()=pygccxml.declarations.enumeration.enumeration_t-class.html#__init__,Method pygccxml.declarations.matcher.declaration_not_found_t.__init__()=pygccxml.declarations.matcher.declaration_not_found_t-class.html#__init__,Method pygccxml.declarations.matcher.multiple_declarations_found_t.__init__()=pygccxml.declarations.matcher.multiple_declarations_found_t-class.html#__init__,Method pygccxml.declarations.matchers.access_type_matcher_t.__init__()=pygccxml.declarations.matchers.access_type_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.and_matcher_t.__init__()=pygccxml.declarations.matchers.and_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.calldef_matcher_t.__init__()=pygccxml.declarations.matchers.calldef_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.custom_matcher_t.__init__()=pygccxml.declarations.matchers.custom_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.declaration_matcher_t.__init__()=pygccxml.declarations.matchers.declaration_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.matcher_base_t.__init__()=pygccxml.declarations.matchers.matcher_base_t-class.html#__init__,Method pygccxml.declarations.matchers.namespace_matcher_t.__init__()=pygccxml.declarations.matchers.namespace_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.not_matcher_t.__init__()=pygccxml.declarations.matchers.not_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.operator_matcher_t.__init__()=pygccxml.declarations.matchers.operator_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.or_matcher_t.__init__()=pygccxml.declarations.matchers.or_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.regex_matcher_t.__init__()=pygccxml.declarations.matchers.regex_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.variable_matcher_t.__init__()=pygccxml.declarations.matchers.variable_matcher_t-class.html#__init__,Method pygccxml.declarations.matchers.virtuality_type_matcher_t.__init__()=pygccxml.declarations.matchers.virtuality_type_matcher_t-class.html#__init__,Method pygccxml.declarations.mdecl_wrapper.call_redirector_t.__init__()=pygccxml.declarations.mdecl_wrapper.call_redirector_t-class.html#__init__,Method pygccxml.declarations.mdecl_wrapper.mdecl_wrapper_t.__init__()=pygccxml.declarations.mdecl_wrapper.mdecl_wrapper_t-class.html#__init__,Method pygccxml.declarations.namespace.namespace_t.__init__()=pygccxml.declarations.namespace.namespace_t-class.html#__init__,Method pygccxml.declarations.pattern_parser.parser_t.__init__()=pygccxml.declarations.pattern_parser.parser_t-class.html#__init__,Method pygccxml.declarations.scopedef.scopedef_t.__init__()=pygccxml.declarations.scopedef.scopedef_t-class.html#__init__,Method pygccxml.declarations.type_traits.declaration_xxx_traits.__init__()=pygccxml.declarations.type_traits.declaration_xxx_traits-class.html#__init__,Method pygccxml.declarations.type_visitor.type_visitor_t.__init__()=pygccxml.declarations.type_visitor.type_visitor_t-class.html#__init__,Method pygccxml.declarations.typedef.typedef_t.__init__()=pygccxml.declarations.typedef.typedef_t-class.html#__init__,Method pygccxml.declarations.variable.variable_t.__init__()=pygccxml.declarations.variable.variable_t-class.html#__init__,Method pygccxml.msvc.bsc.definition_t.__init__()=pygccxml.msvc.bsc.definition_t-class.html#__init__,Method pygccxml.msvc.bsc.instance_t.__init__()=pygccxml.msvc.bsc.instance_t-class.html#__init__,Method pygccxml.msvc.bsc.module_t.__init__()=pygccxml.msvc.bsc.module_t-class.html#__init__,Method pygccxml.msvc.bsc.reader_t.__init__()=pygccxml.msvc.bsc.reader_t-class.html#__init__,Method pygccxml.msvc.bsc_impl_details.bsc_reader_t.__init__()=pygccxml.msvc.bsc_impl_details.bsc_reader_t-class.html#__init__,Method pygccxml.msvc.bsc_impl_details.definition_t.__init__()=pygccxml.msvc.bsc_impl_details.definition_t-class.html#__init__,Method pygccxml.msvc.bsc_impl_details.instance_t.__init__()=pygccxml.msvc.bsc_impl_details.instance_t-class.html#__init__,Method pygccxml.msvc.bsc_impl_details.module_t.__init__()=pygccxml.msvc.bsc_impl_details.module_t-class.html#__init__,Method pygccxml.msvc.pdb.impl_details.full_name_splitter_t.__init__()=pygccxml.msvc.pdb.impl_details.full_name_splitter_t-class.html#__init__,Method pygccxml.msvc.pdb.loader.decl_loader_t.__init__()=pygccxml.msvc.pdb.loader.decl_loader_t-class.html#__init__,Method pygccxml.msvc.pdb.loader.decl_loader_t.parent_exists_t.__init__()=pygccxml.msvc.pdb.loader.decl_loader_t.parent_exists_t-class.html#__init__,Method pygccxml.parser.config.gccxml_configuration_t.__init__()=pygccxml.parser.config.gccxml_configuration_t-class.html#__init__,Method pygccxml.parser.config.parser_configuration_t.__init__()=pygccxml.parser.config.parser_configuration_t-class.html#__init__,Method pygccxml.parser.declarations_cache.cache_base_t.__init__()=pygccxml.parser.declarations_cache.cache_base_t-class.html#__init__,Method pygccxml.parser.declarations_cache.dummy_cache_t.__init__()=pygccxml.parser.declarations_cache.dummy_cache_t-class.html#__init__,Method pygccxml.parser.declarations_cache.file_cache_t.__init__()=pygccxml.parser.declarations_cache.file_cache_t-class.html#__init__,Method pygccxml.parser.declarations_cache.record_t.__init__()=pygccxml.parser.declarations_cache.record_t-class.html#__init__,Method pygccxml.parser.directory_cache.directory_cache_t.__init__()=pygccxml.parser.directory_cache.directory_cache_t-class.html#__init__,Method pygccxml.parser.directory_cache.filename_entry_t.__init__()=pygccxml.parser.directory_cache.filename_entry_t-class.html#__init__,Method pygccxml.parser.directory_cache.filename_repository_t.__init__()=pygccxml.parser.directory_cache.filename_repository_t-class.html#__init__,Method pygccxml.parser.directory_cache.index_entry_t.__init__()=pygccxml.parser.directory_cache.index_entry_t-class.html#__init__,Method pygccxml.parser.etree_scanner.etree_saxifier_t.__init__()=pygccxml.parser.etree_scanner.etree_saxifier_t-class.html#__init__,Method pygccxml.parser.etree_scanner.ietree_scanner_t.__init__()=pygccxml.parser.etree_scanner.ietree_scanner_t-class.html#__init__,Method pygccxml.parser.linker.linker_t.__init__()=pygccxml.parser.linker.linker_t-class.html#__init__,Method pygccxml.parser.patcher.casting_operator_patcher_t.__init__()=pygccxml.parser.patcher.casting_operator_patcher_t-class.html#__init__,Method pygccxml.parser.patcher.default_argument_patcher_t.__init__()=pygccxml.parser.patcher.default_argument_patcher_t-class.html#__init__,Method pygccxml.parser.project_reader.file_configuration_t.__init__()=pygccxml.parser.project_reader.file_configuration_t-class.html#__init__,Method pygccxml.parser.project_reader.project_reader_t.__init__()=pygccxml.parser.project_reader.project_reader_t-class.html#__init__,Method pygccxml.parser.scanner.scanner_t.__init__()=pygccxml.parser.scanner.scanner_t-class.html#__init__,Method pygccxml.parser.source_reader.gccxml_runtime_error_t.__init__()=pygccxml.parser.source_reader.gccxml_runtime_error_t-class.html#__init__,Method pygccxml.parser.source_reader.source_reader_t.__init__()=pygccxml.parser.source_reader.source_reader_t-class.html#__init__,Method pygccxml.utils.cached.__init__()=pygccxml.utils.cached-class.html#__init__,Method pygccxml.utils.fs_utils.base_files_iterator.__init__()=pygccxml.utils.fs_utils.base_files_iterator-class.html#__init__,Method pygccxml.utils.fs_utils.directories_walker.__init__()=pygccxml.utils.fs_utils.directories_walker-class.html#__init__,Method pygccxml.utils.fs_utils.files_walker.__init__()=pygccxml.utils.fs_utils.files_walker-class.html#__init__"><a title="pygccxml.declarations.algorithm.match_declaration_t.__init__
+pygccxml.declarations.algorithm.visit_function_has_not_been_found_t.__init__
+pygccxml.declarations.algorithms_cache.declaration_algs_cache_t.__init__
+pygccxml.declarations.algorithms_cache.type_algs_cache_t.__init__
+pygccxml.declarations.calldef.argument_t.__init__
+pygccxml.declarations.calldef.calldef_t.__init__
+pygccxml.declarations.calldef.casting_operator_t.__init__
+pygccxml.declarations.calldef.constructor_t.__init__
+pygccxml.declarations.calldef.destructor_t.__init__
+pygccxml.declarations.calldef.free_calldef_t.__init__
+pygccxml.declarations.calldef.free_function_t.__init__
+pygccxml.declarations.calldef.free_operator_t.__init__
+pygccxml.declarations.calldef.member_calldef_t.__init__
+pygccxml.declarations.calldef.member_function_t.__init__
+pygccxml.declarations.calldef.member_operator_t.__init__
+pygccxml.declarations.calldef.operator_t.__init__
+pygccxml.declarations.class_declaration.class_declaration_t.__init__
+pygccxml.declarations.class_declaration.class_t.__init__
+pygccxml.declarations.class_declaration.hierarchy_info_t.__init__
+pygccxml.declarations.container_traits.container_traits_impl_t.__init__
+pygccxml.declarations.cpptypes.array_t.__init__
+pygccxml.declarations.cpptypes.bool_t.__init__
+pygccxml.declarations.cpptypes.calldef_type_t.__init__
+pygccxml.declarations.cpptypes.char_t.__init__
+pygccxml.declarations.cpptypes.complex_double_t.__init__
+pygccxml.declarations.cpptypes.complex_float_t.__init__
+pygccxml.declarations.cpptypes.complex_long_double_t.__init__
+pygccxml.declarations.cpptypes.compound_t.__init__
+pygccxml.declarations.cpptypes.const_t.__init__
+pygccxml.declarations.cpptypes.declarated_t.__init__
+pygccxml.declarations.cpptypes.double_t.__init__
+pygccxml.declarations.cpptypes.dummy_type_t.__init__
+pygccxml.declarations.cpptypes.ellipsis_t.__init__
+pygccxml.declarations.cpptypes.float_t.__init__
+pygccxml.declarations.cpptypes.free_function_type_t.__init__
+pygccxml.declarations.cpptypes.fundamental_t.__init__
+pygccxml.declarations.cpptypes.int_t.__init__
+pygccxml.declarations.cpptypes.java_fundamental_t.__init__
+pygccxml.declarations.cpptypes.jboolean_t.__init__
+pygccxml.declarations.cpptypes.jbyte_t.__init__
+pygccxml.declarations.cpptypes.jchar_t.__init__
+pygccxml.declarations.cpptypes.jdouble_t.__init__
+pygccxml.declarations.cpptypes.jfloat_t.__init__
+pygccxml.declarations.cpptypes.jint_t.__init__
+pygccxml.declarations.cpptypes.jlong_t.__init__
+pygccxml.declarations.cpptypes.jshort_t.__init__
+pygccxml.declarations.cpptypes.long_double_t.__init__
+pygccxml.declarations.cpptypes.long_int_t.__init__
+pygccxml.declarations.cpptypes.long_long_int_t.__init__
+pygccxml.declarations.cpptypes.long_long_unsigned_int_t.__init__
+pygccxml.declarations.cpptypes.long_unsigned_int_t.__init__
+pygccxml.declarations.cpptypes.member_function_type_t.__init__
+pygccxml.declarations.cpptypes.member_variable_type_t.__init__
+pygccxml.declarations.cpptypes.pointer_t.__init__
+pygccxml.declarations.cpptypes.reference_t.__init__
+pygccxml.declarations.cpptypes.restrict_t.__init__
+pygccxml.declarations.cpptypes.short_int_t.__init__
+pygccxml.declarations.cpptypes.short_unsigned_int_t.__init__
+pygccxml.declarations.cpptypes.signed_char_t.__init__
+pygccxml.declarations.cpptypes.type_qualifiers_t.__init__
+pygccxml.declarations.cpptypes.type_t.__init__
+pygccxml.declarations.cpptypes.unknown_t.__init__
+pygccxml.declarations.cpptypes.unsigned_char_t.__init__
+pygccxml.declarations.cpptypes.unsigned_int_t.__init__
+pygccxml.declarations.cpptypes.void_t.__init__
+pygccxml.declarations.cpptypes.volatile_t.__init__
+pygccxml.declarations.cpptypes.wchar_t.__init__
+pygccxml.declarations.decl_factory.decl_factory_t.__init__
+pygccxml.declarations.decl_printer.decl_printer_t.__init__
+pygccxml.declarations.decl_visitor.decl_visitor_t.__init__
+pygccxml.declarations.declaration.declaration_t.__init__
+pygccxml.declarations.declaration.location_t.__init__
+pygccxml.declarations.dependencies.dependency_info_t.__init__
+pygccxml.declarations.enumeration.enumeration_t.__init__
+pygccxml.declarations.matcher.declaration_not_found_t.__init__
+pygccxml.declarations.matcher.multiple_declarations_found_t.__init__
+pygccxml.declarations.matchers.access_type_matcher_t.__init__
+pygccxml.declarations.matchers.and_matcher_t.__init__
+pygccxml.declarations.matchers.calldef_matcher_t.__init__
+pygccxml.declarations.matchers.custom_matcher_t.__init__
+pygccxml.declarations.matchers.declaration_matcher_t.__init__
+pygccxml.declarations.matchers.matcher_base_t.__init__
+pygccxml.declarations.matchers.namespace_matcher_t.__init__
+pygccxml.declarations.matchers.not_matcher_t.__init__
+pygccxml.declarations.matchers.operator_matcher_t.__init__
+pygccxml.declarations.matchers.or_matcher_t.__init__
+pygccxml.declarations.matchers.regex_matcher_t.__init__
+pygccxml.declarations.matchers.variable_matcher_t.__init__
+pygccxml.declarations.matchers.virtuality_type_matcher_t.__init__
+pygccxml.declarations.mdecl_wrapper.call_redirector_t.__init__
+pygccxml.declarations.mdecl_wrapper.mdecl_wrapper_t.__init__
+pygccxml.declarations.namespace.namespace_t.__init__
+pygccxml.declarations.pattern_parser.parser_t.__init__
+pygccxml.declarations.scopedef.scopedef_t.__init__
+pygccxml.declarations.type_traits.declaration_xxx_traits.__init__
+pygccxml.declarations.type_visitor.type_visitor_t.__init__
+pygccxml.declarations.typedef.typedef_t.__init__
+pygccxml.declarations.variable.variable_t.__init__
+pygccxml.msvc.bsc.definition_t.__init__
+pygccxml.msvc.bsc.instance_t.__init__
+pygccxml.msvc.bsc.module_t.__init__
+pygccxml.msvc.bsc.reader_t.__init__
+pygccxml.msvc.bsc_impl_details.bsc_reader_t.__init__
+pygccxml.msvc.bsc_impl_details.definition_t.__init__
+pygccxml.msvc.bsc_impl_details.instance_t.__init__
+pygccxml.msvc.bsc_impl_details.module_t.__init__
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.__init__
+pygccxml.msvc.pdb.loader.decl_loader_t.__init__
+pygccxml.msvc.pdb.loader.decl_loader_t.parent_exists_t.__init__
+pygccxml.parser.config.gccxml_configuration_t.__init__
+pygccxml.parser.config.parser_configuration_t.__init__
+pygccxml.parser.declarations_cache.cache_base_t.__init__
+pygccxml.parser.declarations_cache.dummy_cache_t.__init__
+pygccxml.parser.declarations_cache.file_cache_t.__init__
+pygccxml.parser.declarations_cache.record_t.__init__
+pygccxml.parser.directory_cache.directory_cache_t.__init__
+pygccxml.parser.directory_cache.filename_entry_t.__init__
+pygccxml.parser.directory_cache.filename_repository_t.__init__
+pygccxml.parser.directory_cache.index_entry_t.__init__
+pygccxml.parser.etree_scanner.etree_saxifier_t.__init__
+pygccxml.parser.etree_scanner.ietree_scanner_t.__init__
+pygccxml.parser.linker.linker_t.__init__
+pygccxml.parser.patcher.casting_operator_patcher_t.__init__
+pygccxml.parser.patcher.default_argument_patcher_t.__init__
+pygccxml.parser.project_reader.file_configuration_t.__init__
+pygccxml.parser.project_reader.project_reader_t.__init__
+pygccxml.parser.scanner.scanner_t.__init__
+pygccxml.parser.source_reader.gccxml_runtime_error_t.__init__
+pygccxml.parser.source_reader.source_reader_t.__init__
+pygccxml.utils.cached.__init__
+pygccxml.utils.fs_utils.base_files_iterator.__init__
+pygccxml.utils.fs_utils.directories_walker.__init__
+pygccxml.utils.fs_utils.files_walker.__init__" class="py-name" href="#" onclick="return doclink('link-40', '__init__', 'link-40');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">fget</tt><tt class="py-op">,</tt> <tt class="py-name">fdel</tt><tt class="py-op">=</tt><tt class="py-name">fdel</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">         </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="cached.reset"></a><div id="cached.reset-def"><a name="L124"></a><tt class="py-lineno">124</tt> <a class="py-toggle" href="#" id="cached.reset-toggle" onclick="return toggle('cached.reset');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.cached-class.html#reset">reset</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="cached.reset-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="cached.reset-expanded"><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-name">cls</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__class__</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-41" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-41', 'name', 'link-5');">name</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">dir</tt><tt class="py-op">(</tt><tt class="py-name">cls</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">            <tt class="py-name">attr</tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">cls</tt><tt class="py-op">,</tt> <tt id="link-42" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-42', 'name', 'link-5');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">attr</tt><tt class="py-op">,</tt> <tt id="link-43" class="py-name"><a title="pygccxml.utils.cached" class="py-name" href="#" onclick="return doclink('link-43', 'cached', 'link-39');">cached</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                <tt class="py-name">delattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt id="link-44" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-44', 'name', 'link-5');">name</a></tt><tt class="py-op">)</tt>  </tt>
+</div></div><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="enum"></a><div id="enum-def"><a name="L131"></a><tt class="py-lineno">131</tt> <a class="py-toggle" href="#" id="enum-toggle" onclick="return toggle('enum');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pygccxml.utils.enum-class.html">enum</a><tt class="py-op">(</tt> <tt class="py-base-class">object</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="enum-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="enum-expanded"><a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-docstring">"""Usage example:</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">        class fruits(enum):</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring">            apple = 0</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">            orange = 1</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">            </tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring">        fruits.has_value( 1 )</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">        fruits.name_of( 1 )</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">     </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">classmethod</tt> </tt>
+<a name="enum.has_value"></a><div id="enum.has_value-def"><a name="L142"></a><tt class="py-lineno">142</tt> <a class="py-toggle" href="#" id="enum.has_value-toggle" onclick="return toggle('enum.has_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.enum-class.html#has_value">has_value</a><tt class="py-op">(</tt> <tt class="py-param">cls</tt><tt class="py-op">,</tt> <tt class="py-param">enum_numeric_value</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="enum.has_value-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="enum.has_value-expanded"><a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-45" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-45', 'name', 'link-5');">name</a></tt><tt class="py-op">,</tt> <tt id="link-46" class="py-name"><a title="pygccxml.declarations.variable.variable_t.value" class="py-name" href="#" onclick="return doclink('link-46', 'value', 'link-36');">value</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">cls</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">.</tt><tt class="py-name">iteritems</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>           </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">enum_numeric_value</tt> <tt class="py-op">==</tt> <tt id="link-47" class="py-name"><a title="pygccxml.declarations.variable.variable_t.value" class="py-name" href="#" onclick="return doclink('link-47', 'value', 'link-36');">value</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+</div><a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">     </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">classmethod</tt> </tt>
+<a name="enum.name_of"></a><div id="enum.name_of-def"><a name="L150"></a><tt class="py-lineno">150</tt> <a class="py-toggle" href="#" id="enum.name_of-toggle" onclick="return toggle('enum.name_of');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.utils.enum-class.html#name_of">name_of</a><tt class="py-op">(</tt> <tt class="py-param">cls</tt><tt class="py-op">,</tt> <tt class="py-param">enum_numeric_value</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="enum.name_of-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="enum.name_of-expanded"><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-48" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-48', 'name', 'link-5');">name</a></tt><tt class="py-op">,</tt> <tt id="link-49" class="py-name"><a title="pygccxml.declarations.variable.variable_t.value" class="py-name" href="#" onclick="return doclink('link-49', 'value', 'link-36');">value</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">cls</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">.</tt><tt class="py-name">iteritems</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>           </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">enum_numeric_value</tt> <tt class="py-op">==</tt> <tt id="link-50" class="py-name"><a title="pygccxml.declarations.variable.variable_t.value" class="py-name" href="#" onclick="return doclink('link-50', 'value', 'link-36');">value</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt id="link-51" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-51', 'name', 'link-5');">name</a></tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">(</tt> <tt class="py-string">'Unable to find name for value(%d) in enumeration "%s"'</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">                                <tt class="py-op">%</tt> <tt class="py-op">(</tt> <tt class="py-name">enum_numeric_value</tt><tt class="py-op">,</tt> <tt class="py-name">cls</tt><tt class="py-op">.</tt><tt class="py-name">__name__</tt> <tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+</div></div><a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Oct 20 09:00:23 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

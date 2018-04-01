@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygccxml.parser.scanner</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygccxml-module.html">Package&nbsp;pygccxml</a> ::
+        <a href="pygccxml.parser-module.html">Package&nbsp;parser</a> ::
+        Module&nbsp;scanner
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module scanner</h1><p class="nomargin-top"><span class="codelink"><a href="pygccxml.parser.scanner-pysrc.html">source&nbsp;code</a></span></p>
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td class="summary" colspan="2">
+        <a href="pygccxml.parser.scanner.scanner_t-class.html" class="summary-name">scanner_t</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_ABSTRACT"></a><span class="summary-name">XML_AN_ABSTRACT</span> = <code title="'abstract'"><code class="variable-quote">'</code><code class="variable-string">abstract</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_ACCESS"></a><span class="summary-name">XML_AN_ACCESS</span> = <code title="'access'"><code class="variable-quote">'</code><code class="variable-string">access</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_ALIGN"></a><span class="summary-name">XML_AN_ALIGN</span> = <code title="'align'"><code class="variable-quote">'</code><code class="variable-string">align</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_ARTIFICIAL"></a><span class="summary-name">XML_AN_ARTIFICIAL</span> = <code title="'artificial'"><code class="variable-quote">'</code><code class="variable-string">artificial</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_ATTRIBUTES"></a><span class="summary-name">XML_AN_ATTRIBUTES</span> = <code title="'attributes'"><code class="variable-quote">'</code><code class="variable-string">attributes</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_BASE_TYPE"></a><span class="summary-name">XML_AN_BASE_TYPE</span> = <code title="'basetype'"><code class="variable-quote">'</code><code class="variable-string">basetype</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_BASES"></a><span class="summary-name">XML_AN_BASES</span> = <code title="'bases'"><code class="variable-quote">'</code><code class="variable-string">bases</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_BITS"></a><span class="summary-name">XML_AN_BITS</span> = <code title="'bits'"><code class="variable-quote">'</code><code class="variable-string">bits</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_CONST"></a><span class="summary-name">XML_AN_CONST</span> = <code title="'const'"><code class="variable-quote">'</code><code class="variable-string">const</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_CONTEXT"></a><span class="summary-name">XML_AN_CONTEXT</span> = <code title="'context'"><code class="variable-quote">'</code><code class="variable-string">context</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_CVS_REVISION"></a><span class="summary-name">XML_AN_CVS_REVISION</span> = <code title="'cvs_revision'"><code class="variable-quote">'</code><code class="variable-string">cvs_revision</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_DEFAULT"></a><span class="summary-name">XML_AN_DEFAULT</span> = <code title="'default'"><code class="variable-quote">'</code><code class="variable-string">default</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_DEMANGLED"></a><span class="summary-name">XML_AN_DEMANGLED</span> = <code title="'demangled'"><code class="variable-quote">'</code><code class="variable-string">demangled</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_EXTERN"></a><span class="summary-name">XML_AN_EXTERN</span> = <code title="'extern'"><code class="variable-quote">'</code><code class="variable-string">extern</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_FILE"></a><span class="summary-name">XML_AN_FILE</span> = <code title="'file'"><code class="variable-quote">'</code><code class="variable-string">file</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_ID"></a><span class="summary-name">XML_AN_ID</span> = <code title="'id'"><code class="variable-quote">'</code><code class="variable-string">id</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_INCOMPLETE"></a><span class="summary-name">XML_AN_INCOMPLETE</span> = <code title="'incomplete'"><code class="variable-quote">'</code><code class="variable-string">incomplete</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_INIT"></a><span class="summary-name">XML_AN_INIT</span> = <code title="'init'"><code class="variable-quote">'</code><code class="variable-string">init</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_LINE"></a><span class="summary-name">XML_AN_LINE</span> = <code title="'line'"><code class="variable-quote">'</code><code class="variable-string">line</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_MANGLED"></a><span class="summary-name">XML_AN_MANGLED</span> = <code title="'mangled'"><code class="variable-quote">'</code><code class="variable-string">mangled</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_MAX"></a><span class="summary-name">XML_AN_MAX</span> = <code title="'max'"><code class="variable-quote">'</code><code class="variable-string">max</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_MEMBERS"></a><span class="summary-name">XML_AN_MEMBERS</span> = <code title="'members'"><code class="variable-quote">'</code><code class="variable-string">members</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_MUTABLE"></a><span class="summary-name">XML_AN_MUTABLE</span> = <code title="'mutable'"><code class="variable-quote">'</code><code class="variable-string">mutable</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_NAME"></a><span class="summary-name">XML_AN_NAME</span> = <code title="'name'"><code class="variable-quote">'</code><code class="variable-string">name</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_OFFSET"></a><span class="summary-name">XML_AN_OFFSET</span> = <code title="'offset'"><code class="variable-quote">'</code><code class="variable-string">offset</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_PURE_VIRTUAL"></a><span class="summary-name">XML_AN_PURE_VIRTUAL</span> = <code title="'pure_virtual'"><code class="variable-quote">'</code><code class="variable-string">pure_virtual</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_RESTRICT"></a><span class="summary-name">XML_AN_RESTRICT</span> = <code title="'restrict'"><code class="variable-quote">'</code><code class="variable-string">restrict</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_RETURNS"></a><span class="summary-name">XML_AN_RETURNS</span> = <code title="'returns'"><code class="variable-quote">'</code><code class="variable-string">returns</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_SIZE"></a><span class="summary-name">XML_AN_SIZE</span> = <code title="'size'"><code class="variable-quote">'</code><code class="variable-string">size</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_STATIC"></a><span class="summary-name">XML_AN_STATIC</span> = <code title="'static'"><code class="variable-quote">'</code><code class="variable-string">static</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_THROW"></a><span class="summary-name">XML_AN_THROW</span> = <code title="'throw'"><code class="variable-quote">'</code><code class="variable-string">throw</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_TYPE"></a><span class="summary-name">XML_AN_TYPE</span> = <code title="'type'"><code class="variable-quote">'</code><code class="variable-string">type</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_VIRTUAL"></a><span class="summary-name">XML_AN_VIRTUAL</span> = <code title="'virtual'"><code class="variable-quote">'</code><code class="variable-string">virtual</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_AN_VOLATILE"></a><span class="summary-name">XML_AN_VOLATILE</span> = <code title="'volatile'"><code class="variable-quote">'</code><code class="variable-string">volatile</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_ARGUMENT"></a><span class="summary-name">XML_NN_ARGUMENT</span> = <code title="'Argument'"><code class="variable-quote">'</code><code class="variable-string">Argument</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_ARRAY_TYPE"></a><span class="summary-name">XML_NN_ARRAY_TYPE</span> = <code title="'ArrayType'"><code class="variable-quote">'</code><code class="variable-string">ArrayType</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_CASTING_OPERATOR"></a><span class="summary-name">XML_NN_CASTING_OPERATOR</span> = <code title="'Converter'"><code class="variable-quote">'</code><code class="variable-string">Converter</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_CLASS"></a><span class="summary-name">XML_NN_CLASS</span> = <code title="'Class'"><code class="variable-quote">'</code><code class="variable-string">Class</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_CONSTRUCTOR"></a><span class="summary-name">XML_NN_CONSTRUCTOR</span> = <code title="'Constructor'"><code class="variable-quote">'</code><code class="variable-string">Constructor</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_CV_QUALIFIED_TYPE"></a><span class="summary-name">XML_NN_CV_QUALIFIED_TYPE</span> = <code title="'CvQualifiedType'"><code class="variable-quote">'</code><code class="variable-string">CvQualifiedType</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_DESTRUCTOR"></a><span class="summary-name">XML_NN_DESTRUCTOR</span> = <code title="'Destructor'"><code class="variable-quote">'</code><code class="variable-string">Destructor</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_ELLIPSIS"></a><span class="summary-name">XML_NN_ELLIPSIS</span> = <code title="'Ellipsis'"><code class="variable-quote">'</code><code class="variable-string">Ellipsis</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_ENUMERATION"></a><span class="summary-name">XML_NN_ENUMERATION</span> = <code title="'Enumeration'"><code class="variable-quote">'</code><code class="variable-string">Enumeration</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_ENUMERATION_VALUE"></a><span class="summary-name">XML_NN_ENUMERATION_VALUE</span> = <code title="'EnumValue'"><code class="variable-quote">'</code><code class="variable-string">EnumValue</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_FIELD"></a><span class="summary-name">XML_NN_FIELD</span> = <code title="'Field'"><code class="variable-quote">'</code><code class="variable-string">Field</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_FILE"></a><span class="summary-name">XML_NN_FILE</span> = <code title="'File'"><code class="variable-quote">'</code><code class="variable-string">File</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_FUNCTION"></a><span class="summary-name">XML_NN_FUNCTION</span> = <code title="'Function'"><code class="variable-quote">'</code><code class="variable-string">Function</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_FUNCTION_TYPE"></a><span class="summary-name">XML_NN_FUNCTION_TYPE</span> = <code title="'FunctionType'"><code class="variable-quote">'</code><code class="variable-string">FunctionType</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_FUNDAMENTAL_TYPE"></a><span class="summary-name">XML_NN_FUNDAMENTAL_TYPE</span> = <code title="'FundamentalType'"><code class="variable-quote">'</code><code class="variable-string">FundamentalType</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_FREE_OPERATOR"></a><span class="summary-name">XML_NN_FREE_OPERATOR</span> = <code title="'OperatorFunction'"><code class="variable-quote">'</code><code class="variable-string">OperatorFunction</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_GCC_XML"></a><span class="summary-name">XML_NN_GCC_XML</span> = <code title="'GCC_XML'"><code class="variable-quote">'</code><code class="variable-string">GCC_XML</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_MEMBER_OPERATOR"></a><span class="summary-name">XML_NN_MEMBER_OPERATOR</span> = <code title="'OperatorMethod'"><code class="variable-quote">'</code><code class="variable-string">OperatorMethod</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_METHOD"></a><span class="summary-name">XML_NN_METHOD</span> = <code title="'Method'"><code class="variable-quote">'</code><code class="variable-string">Method</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_METHOD_TYPE"></a><span class="summary-name">XML_NN_METHOD_TYPE</span> = <code title="'MethodType'"><code class="variable-quote">'</code><code class="variable-string">MethodType</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_NAMESPACE"></a><span class="summary-name">XML_NN_NAMESPACE</span> = <code title="'Namespace'"><code class="variable-quote">'</code><code class="variable-string">Namespace</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_OFFSET_TYPE"></a><span class="summary-name">XML_NN_OFFSET_TYPE</span> = <code title="'OffsetType'"><code class="variable-quote">'</code><code class="variable-string">OffsetType</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_POINTER_TYPE"></a><span class="summary-name">XML_NN_POINTER_TYPE</span> = <code title="'PointerType'"><code class="variable-quote">'</code><code class="variable-string">PointerType</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_REFERENCE_TYPE"></a><span class="summary-name">XML_NN_REFERENCE_TYPE</span> = <code title="'ReferenceType'"><code class="variable-quote">'</code><code class="variable-string">ReferenceType</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_ROOT"></a><span class="summary-name">XML_NN_ROOT</span> = <code title="'GCC_XML'"><code class="variable-quote">'</code><code class="variable-string">GCC_XML</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_STRUCT"></a><span class="summary-name">XML_NN_STRUCT</span> = <code title="'Struct'"><code class="variable-quote">'</code><code class="variable-string">Struct</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_TYPEDEF"></a><span class="summary-name">XML_NN_TYPEDEF</span> = <code title="'Typedef'"><code class="variable-quote">'</code><code class="variable-string">Typedef</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_UNION"></a><span class="summary-name">XML_NN_UNION</span> = <code title="'Union'"><code class="variable-quote">'</code><code class="variable-string">Union</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="XML_NN_VARIABLE"></a><span class="summary-name">XML_NN_VARIABLE</span> = <code title="'Variable'"><code class="variable-quote">'</code><code class="variable-string">Variable</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Oct 20 09:00:17 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

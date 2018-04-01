@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygccxml</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;pygccxml
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package pygccxml</h1><p class="nomargin-top"><span class="codelink"><a href="pygccxml-pysrc.html">source&nbsp;code</a></span></p>
+<p>Python GCC-XML front end.</p>
+  <p>This package provides functionality to extract and inspect 
+  declarations from C/C++ header files. This is accomplished by invoking 
+  the external tool <a href="http://www.gccxml.org/" 
+  target="_top">gccxml</a> which parses a header file and dumps the 
+  declarations as a XML file. This XML file is then read by pygccxml and 
+  the contents are made available as appropriate Python objects.</p>
+  <p>To parse a set of C/C++ header files you use the <a 
+  href="pygccxml.parser-module.html#parse" class="link">parse()</a> 
+  function in the <a href="pygccxml.parser-module.html" 
+  class="link">parser</a> sub package which returns a tree that contains 
+  all declarations found in the header files. The root of the tree 
+  represents the main namespace <code>::</code> and the children nodes 
+  represent the namespace contents such as other namespaces, classes, 
+  functions, etc. Each node in the tree is an object of a type derived from
+  the <a href="pygccxml.declarations.declaration.declaration_t-class.html" 
+  class="link">declaration_t</a> base class. An inner node is always either
+  a namespace (<a 
+  href="pygccxml.declarations.namespace.namespace_t-class.html" 
+  class="link">namespace_t</a>) or a class (<a 
+  href="pygccxml.declarations.class_declaration.class_t-class.html" 
+  class="link">class_t</a>) which are both derived from <a 
+  href="pygccxml.declarations.scopedef.scopedef_t-class.html" 
+  class="link">scopedef_t</a>. Everything else (free functions, member 
+  functions, enumerations, variables, etc.) is always a leaf. You will find
+  all those declaration classes in the <a 
+  href="pygccxml.declarations-module.html" class="link">declarations</a> 
+  sub-package.</p>
+
+<hr />
+<div class="fields">      <p><strong>Version:</strong>
+        1.0.0
+      </p>
+</div><!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Submodules</span></td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li> <strong class="uidlink"><a href="pygccxml.declarations-module.html">pygccxml.declarations</a></strong>: <em class="summary">contains classes that describe different C++ declarations</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.algorithm-module.html">pygccxml.declarations.algorithm</a></strong>: <em class="summary">defines few unrelated algorithms, that works on declarations</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.algorithms_cache-module.html">pygccxml.declarations.algorithms_cache</a></strong>: <em class="summary">defines class that will keep results of different calculations.</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.call_invocation-module.html">pygccxml.declarations.call_invocation</a></strong>: <em class="summary">free function call parser</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.calldef-module.html">pygccxml.declarations.calldef</a></strong>: <em class="summary">defines classes, that describes &quot;callable&quot; declarations</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.class_declaration-module.html">pygccxml.declarations.class_declaration</a></strong>: <em class="summary">defines classes, that describes C++ classes</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.compilers-module.html">pygccxml.declarations.compilers</a></strong>: <em class="summary">contains enumeration of all compilers supported by the project</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.container_traits-module.html">pygccxml.declarations.container_traits</a></strong>: <em class="summary">defines few algorithms, that deals with different properties of std
+        containers</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.cpptypes-module.html">pygccxml.declarations.cpptypes</a></strong>: <em class="summary">defines classes, that describe C++ types</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.decl_factory-module.html">pygccxml.declarations.decl_factory</a></strong>: <em class="summary">defines default declarations factory class</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.decl_printer-module.html">pygccxml.declarations.decl_printer</a></strong>: <em class="summary">defines class, decl_printer_t that prints declarations tree in a 
+        user friendly format</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.decl_visitor-module.html">pygccxml.declarations.decl_visitor</a></strong>: <em class="summary">defines declarations visitor class interface</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.declaration-module.html">pygccxml.declarations.declaration</a></strong>: <em class="summary">defines 2 important classes</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.dependencies-module.html">pygccxml.declarations.dependencies</a></strong>: <em class="summary">this module contains class that keeps dependency information of 
+        some declaration</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.enumeration-module.html">pygccxml.declarations.enumeration</a></strong>: <em class="summary">defines class, that describes C++ enum</em>    </li>
+    <li> <strong class="uidlink">pygccxml.declarations.filtering</strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.filtering%27-module.html">pygccxml.declarations.filtering'</a></strong>: <em class="summary">deprecated!</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.function_traits-module.html">pygccxml.declarations.function_traits</a></strong>: <em class="summary">defines few algorithms, that deals with different properties of 
+        functions</em>    </li>
+    <li> <strong class="uidlink">pygccxml.declarations.matcher</strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.matcher%27-module.html">pygccxml.declarations.matcher'</a></strong>: <em class="summary">implements few &quot;find&quot; algorithms on declarations tree</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.matchers-module.html">pygccxml.declarations.matchers</a></strong>: <em class="summary">defines all &quot;built-in&quot; classes that implement 
+        declarations compare functionality according to some criteria</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.mdecl_wrapper-module.html">pygccxml.declarations.mdecl_wrapper</a></strong>: <em class="summary">defines class <a 
+        href="pygccxml.declarations.mdecl_wrapper.mdecl_wrapper_t-class.html"
+        class="link">mdecl_wrapper_t</a> that allows to work on set of 
+        declarations, as it was one declaration.</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.namespace-module.html">pygccxml.declarations.namespace</a></strong>: <em class="summary">defines class, that describes C++ namespace declaration</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.pattern_parser-module.html">pygccxml.declarations.pattern_parser</a></strong>: <em class="summary">implementation details</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.scopedef-module.html">pygccxml.declarations.scopedef</a></strong>: <em class="summary">defines base class for <a 
+        href="pygccxml.declarations.namespace.namespace_t-class.html" 
+        class="link">namespace_t</a> and <a 
+        href="pygccxml.declarations.class_declaration.class_t-class.html" 
+        class="link">class_t</a> classes</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.templates-module.html">pygccxml.declarations.templates</a></strong>: <em class="summary">template instantiation parser</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.type_traits-module.html">pygccxml.declarations.type_traits</a></strong>: <em class="summary">defines few algorithms, that deals with different properties of C++
+        types</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.type_visitor-module.html">pygccxml.declarations.type_visitor</a></strong>: <em class="summary">defines types visitor class interface</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.typedef-module.html">pygccxml.declarations.typedef</a></strong>: <em class="summary">defines class that describes C++ typedef declaration</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.declarations.variable-module.html">pygccxml.declarations.variable</a></strong>: <em class="summary">defines class that describes C++ global and member variable 
+        declaration</em>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc-module.html">pygccxml.msvc</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc.bsc-module.html">pygccxml.msvc.bsc</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc.bsc.c_wrapper-module.html">pygccxml.msvc.bsc.c_wrapper</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc.bsc_impl_details-module.html">pygccxml.msvc.bsc_impl_details</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc.common_utils-module.html">pygccxml.msvc.common_utils</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc.config-module.html">pygccxml.msvc.config</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc.pdb-module.html">pygccxml.msvc.pdb</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc.pdb.enums-module.html">pygccxml.msvc.pdb.enums</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc.pdb.impl_details-module.html">pygccxml.msvc.pdb.impl_details</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.msvc.pdb.loader-module.html">pygccxml.msvc.pdb.loader</a></strong>    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.parser-module.html">pygccxml.parser</a></strong>: <em class="summary">Parser sub-package.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pygccxml.parser.config-module.html">pygccxml.parser.config</a></strong>: <em class="summary">This module contains the implementation of the <a 
+        href="pygccxml.parser.config.gccxml_configuration_t-class.html" 
+        class="link">config_t</a> class.</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.parser.declarations_cache-module.html">pygccxml.parser.declarations_cache</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.parser.directory_cache-module.html">pygccxml.parser.directory_cache</a></strong>: <em class="summary">Directory cache implementation.</em>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.parser.etree_scanner-module.html">pygccxml.parser.etree_scanner</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.parser.linker-module.html">pygccxml.parser.linker</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.parser.patcher-module.html">pygccxml.parser.patcher</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.parser.project_reader-module.html">pygccxml.parser.project_reader</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.parser.scanner-module.html">pygccxml.parser.scanner</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.parser.source_reader-module.html">pygccxml.parser.source_reader</a></strong>    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pygccxml.utils-module.html">pygccxml.utils</a></strong>: <em class="summary">defines logger classes and few convinience methods, not related to 
+        the declarations tree</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pygccxml.utils.fs_utils-module.html">pygccxml.utils.fs_utils</a></strong>    </li>
+    </ul>
+    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__revision__"></a><span class="summary-name">__revision__</span> = <code title="1080">1080</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Oct 20 09:00:16 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

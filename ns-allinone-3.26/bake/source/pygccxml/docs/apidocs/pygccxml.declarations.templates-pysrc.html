@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygccxml.declarations.templates</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygccxml-module.html">Package&nbsp;pygccxml</a> ::
+        <a href="pygccxml.declarations-module.html">Package&nbsp;declarations</a> ::
+        Module&nbsp;templates
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pygccxml.declarations.templates-module.html">Module pygccxml.declarations.templates</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2004-2008 Roman Yakovenko.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Distributed under the Boost Software License, Version 1.0. (See</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># accompanying file LICENSE_1_0.txt or copy at</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># http://www.boost.org/LICENSE_1_0.txt)</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">""" </tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">template instantiation parser</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">This module implements all functionality necessary to parse C++ template</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">instantiations.In other words this module is able to extract next information from </tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">the string like this C{ std::vector&lt;int&gt; }.</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">    - name ( std::vector )</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">    - list of arguments ( int )</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">This module also defines few convenience function like L{split} and L{join}.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module pygccxml.declarations.pattern_parser=pygccxml.declarations.pattern_parser-module.html"><a title="pygccxml.declarations.pattern_parser" class="py-name" href="#" onclick="return doclink('link-0', 'pattern_parser', 'link-0');">pattern_parser</a></tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable pygccxml.declarations.call_invocation.__THE_PARSER=pygccxml.declarations.call_invocation-module.html#__THE_PARSER,Variable pygccxml.declarations.templates.__THE_PARSER=pygccxml.declarations.templates-module.html#__THE_PARSER"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-1', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name"><a title="pygccxml.declarations.pattern_parser" class="py-name" href="#" onclick="return doclink('link-2', 'pattern_parser', 'link-0');">pattern_parser</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Class pygccxml.declarations.pattern_parser.parser_t=pygccxml.declarations.pattern_parser.parser_t-class.html"><a title="pygccxml.declarations.pattern_parser.parser_t" class="py-name" href="#" onclick="return doclink('link-3', 'parser_t', 'link-3');">parser_t</a></tt><tt class="py-op">(</tt> <tt class="py-string">'&lt;'</tt><tt class="py-op">,</tt> <tt class="py-string">'&gt;'</tt><tt class="py-op">,</tt> <tt class="py-string">','</tt> <tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="is_instantiation"></a><div id="is_instantiation-def"><a name="L22"></a><tt class="py-lineno">22</tt> <a class="py-toggle" href="#" id="is_instantiation-toggle" onclick="return toggle('is_instantiation');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.declarations.templates-module.html#is_instantiation">is_instantiation</a><tt class="py-op">(</tt> <tt class="py-param">decl_string</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="is_instantiation-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="is_instantiation-expanded"><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">    returns True if decl_string is template instantiation and False otherwise</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-docstring">    @param decl_string: string that should be checked for pattern presence</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-docstring">    @type decl_string: str</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">    @return: bool</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt id="link-4" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-4', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-5" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-5', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method pygccxml.declarations.pattern_parser.parser_t.has_pattern()=pygccxml.declarations.pattern_parser.parser_t-class.html#has_pattern"><a title="pygccxml.declarations.pattern_parser.parser_t.has_pattern" class="py-name" href="#" onclick="return doclink('link-6', 'has_pattern', 'link-6');">has_pattern</a></tt><tt class="py-op">(</tt> <tt id="link-7" class="py-name" targets="Variable pygccxml.declarations.cpptypes.type_t.decl_string=pygccxml.declarations.cpptypes.type_t-class.html#decl_string,Variable pygccxml.declarations.declaration.declaration_t.decl_string=pygccxml.declarations.declaration.declaration_t-class.html#decl_string"><a title="pygccxml.declarations.cpptypes.type_t.decl_string
+pygccxml.declarations.declaration.declaration_t.decl_string" class="py-name" href="#" onclick="return doclink('link-7', 'decl_string', 'link-7');">decl_string</a></tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"> </tt>
+<a name="name"></a><div id="name-def"><a name="L34"></a><tt class="py-lineno">34</tt> <a class="py-toggle" href="#" id="name-toggle" onclick="return toggle('name');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.declarations.templates-module.html#name">name</a><tt class="py-op">(</tt> <tt class="py-param">decl_string</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="name-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="name-expanded"><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">    returns name of instantiated template</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">    @type decl_string: str</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-docstring">    @return: str</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt id="link-8" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-8', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-9" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-9', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Function pygccxml.declarations.call_invocation.name()=pygccxml.declarations.call_invocation-module.html#name,Variable pygccxml.declarations.calldef.argument_t.name=pygccxml.declarations.calldef.argument_t-class.html#name,Method pygccxml.declarations.container_traits.container_traits_impl_t.name()=pygccxml.declarations.container_traits.container_traits_impl_t-class.html#name,Variable pygccxml.declarations.declaration.declaration_t.name=pygccxml.declarations.declaration.declaration_t-class.html#name,Variable pygccxml.declarations.matchers.declaration_matcher_t.name=pygccxml.declarations.matchers.declaration_matcher_t-class.html#name,Method pygccxml.declarations.pattern_parser.parser_t.name()=pygccxml.declarations.pattern_parser.parser_t-class.html#name,Function pygccxml.declarations.templates.name()=pygccxml.declarations.templates-module.html#name,Method pygccxml.msvc.bsc.instance_t.name()=pygccxml.msvc.bsc.instance_t-class.html#name,Method pygccxml.msvc.bsc_impl_details.instance_t.name()=pygccxml.msvc.bsc_impl_details.instance_t-class.html#name,Variable pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name=pygccxml.msvc.pdb.impl_details.full_name_splitter_t-class.html#name,Variable pygccxml.msvc.pdb.impl_details.name=pygccxml.msvc.pdb.impl_details-module.html#name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-10', 'name', 'link-10');">name</a></tt><tt class="py-op">(</tt> <tt id="link-11" class="py-name"><a title="pygccxml.declarations.cpptypes.type_t.decl_string
+pygccxml.declarations.declaration.declaration_t.decl_string" class="py-name" href="#" onclick="return doclink('link-11', 'decl_string', 'link-7');">decl_string</a></tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
+<a name="args"></a><div id="args-def"><a name="L44"></a><tt class="py-lineno">44</tt> <a class="py-toggle" href="#" id="args-toggle" onclick="return toggle('args');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.declarations.templates-module.html#args">args</a><tt class="py-op">(</tt> <tt class="py-param">decl_string</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="args-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="args-expanded"><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">    returns list of template arguments</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">    @type decl_string: str</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-docstring">    @return: [str]</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt id="link-12" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-12', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-13" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-13', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Function pygccxml.declarations.call_invocation.args()=pygccxml.declarations.call_invocation-module.html#args,Method pygccxml.declarations.pattern_parser.parser_t.args()=pygccxml.declarations.pattern_parser.parser_t-class.html#args,Function pygccxml.declarations.templates.args()=pygccxml.declarations.templates-module.html#args"><a title="pygccxml.declarations.call_invocation.args
+pygccxml.declarations.pattern_parser.parser_t.args
+pygccxml.declarations.templates.args" class="py-name" href="#" onclick="return doclink('link-14', 'args', 'link-14');">args</a></tt><tt class="py-op">(</tt> <tt id="link-15" class="py-name"><a title="pygccxml.declarations.cpptypes.type_t.decl_string
+pygccxml.declarations.declaration.declaration_t.decl_string" class="py-name" href="#" onclick="return doclink('link-15', 'decl_string', 'link-7');">decl_string</a></tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">         </tt>
+<a name="split"></a><div id="split-def"><a name="L54"></a><tt class="py-lineno">54</tt> <a class="py-toggle" href="#" id="split-toggle" onclick="return toggle('split');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.declarations.templates-module.html#split">split</a><tt class="py-op">(</tt> <tt class="py-param">decl_string</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="split-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="split-expanded"><a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-docstring">"""returns (name, [arguments] )"""</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt id="link-16" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-16', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-17" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-17', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Function pygccxml.declarations.call_invocation.split()=pygccxml.declarations.call_invocation-module.html#split,Method pygccxml.declarations.pattern_parser.parser_t.split()=pygccxml.declarations.pattern_parser.parser_t-class.html#split,Function pygccxml.declarations.templates.split()=pygccxml.declarations.templates-module.html#split"><a title="pygccxml.declarations.call_invocation.split
+pygccxml.declarations.pattern_parser.parser_t.split
+pygccxml.declarations.templates.split" class="py-name" href="#" onclick="return doclink('link-18', 'split', 'link-18');">split</a></tt><tt class="py-op">(</tt> <tt id="link-19" class="py-name"><a title="pygccxml.declarations.cpptypes.type_t.decl_string
+pygccxml.declarations.declaration.declaration_t.decl_string" class="py-name" href="#" onclick="return doclink('link-19', 'decl_string', 'link-7');">decl_string</a></tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">     </tt>
+<a name="split_recursive"></a><div id="split_recursive-def"><a name="L59"></a><tt class="py-lineno">59</tt> <a class="py-toggle" href="#" id="split_recursive-toggle" onclick="return toggle('split_recursive');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.declarations.templates-module.html#split_recursive">split_recursive</a><tt class="py-op">(</tt> <tt class="py-param">decl_string</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="split_recursive-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="split_recursive-expanded"><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">    <tt class="py-docstring">"""returns [(name, [arguments])]"""</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt id="link-20" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-20', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-21" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-21', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Function pygccxml.declarations.call_invocation.split_recursive()=pygccxml.declarations.call_invocation-module.html#split_recursive,Method pygccxml.declarations.pattern_parser.parser_t.split_recursive()=pygccxml.declarations.pattern_parser.parser_t-class.html#split_recursive,Function pygccxml.declarations.templates.split_recursive()=pygccxml.declarations.templates-module.html#split_recursive"><a title="pygccxml.declarations.call_invocation.split_recursive
+pygccxml.declarations.pattern_parser.parser_t.split_recursive
+pygccxml.declarations.templates.split_recursive" class="py-name" href="#" onclick="return doclink('link-22', 'split_recursive', 'link-22');">split_recursive</a></tt><tt class="py-op">(</tt> <tt id="link-23" class="py-name"><a title="pygccxml.declarations.cpptypes.type_t.decl_string
+pygccxml.declarations.declaration.declaration_t.decl_string" class="py-name" href="#" onclick="return doclink('link-23', 'decl_string', 'link-7');">decl_string</a></tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"> </tt>
+<a name="join"></a><div id="join-def"><a name="L64"></a><tt class="py-lineno">64</tt> <a class="py-toggle" href="#" id="join-toggle" onclick="return toggle('join');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.declarations.templates-module.html#join">join</a><tt class="py-op">(</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">args</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="join-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="join-expanded"><a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">    <tt class="py-docstring">"""returns name&lt; argument_1, argument_2, ..., argument_n &gt;"""</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt id="link-24" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-24', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-25" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-25', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Function pygccxml.declarations.call_invocation.join()=pygccxml.declarations.call_invocation-module.html#join,Method pygccxml.declarations.pattern_parser.parser_t.join()=pygccxml.declarations.pattern_parser.parser_t-class.html#join,Function pygccxml.declarations.templates.join()=pygccxml.declarations.templates-module.html#join"><a title="pygccxml.declarations.call_invocation.join
+pygccxml.declarations.pattern_parser.parser_t.join
+pygccxml.declarations.templates.join" class="py-name" href="#" onclick="return doclink('link-26', 'join', 'link-26');">join</a></tt><tt class="py-op">(</tt> <tt id="link-27" class="py-name"><a title="pygccxml.declarations.call_invocation.name
+pygccxml.declarations.calldef.argument_t.name
+pygccxml.declarations.container_traits.container_traits_impl_t.name
+pygccxml.declarations.declaration.declaration_t.name
+pygccxml.declarations.matchers.declaration_matcher_t.name
+pygccxml.declarations.pattern_parser.parser_t.name
+pygccxml.declarations.templates.name
+pygccxml.msvc.bsc.instance_t.name
+pygccxml.msvc.bsc_impl_details.instance_t.name
+pygccxml.msvc.pdb.impl_details.full_name_splitter_t.name
+pygccxml.msvc.pdb.impl_details.name" class="py-name" href="#" onclick="return doclink('link-27', 'name', 'link-10');">name</a></tt><tt class="py-op">,</tt> <tt id="link-28" class="py-name"><a title="pygccxml.declarations.call_invocation.args
+pygccxml.declarations.pattern_parser.parser_t.args
+pygccxml.declarations.templates.args" class="py-name" href="#" onclick="return doclink('link-28', 'args', 'link-14');">args</a></tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"> </tt>
+<a name="normalize"></a><div id="normalize-def"><a name="L69"></a><tt class="py-lineno">69</tt> <a class="py-toggle" href="#" id="normalize-toggle" onclick="return toggle('normalize');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="pygccxml.declarations.templates-module.html#normalize">normalize</a><tt class="py-op">(</tt> <tt class="py-param">decl_string</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="normalize-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="normalize-expanded"><a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">    <tt class="py-docstring">"""returns decl_string, which contains "normalized" spaces</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"><tt class="py-docstring">    this functionality allows to implement comparison of 2 different string</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"><tt class="py-docstring">    which are actually same: x::y&lt; z &gt; and x::y&lt;z&gt;</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt id="link-29" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-29', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-30" class="py-name"><a title="pygccxml.declarations.call_invocation.__THE_PARSER
+pygccxml.declarations.templates.__THE_PARSER" class="py-name" href="#" onclick="return doclink('link-30', '__THE_PARSER', 'link-1');">__THE_PARSER</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Static Method pygccxml.declarations.container_traits.defaults_eraser.normalize()=pygccxml.declarations.container_traits.defaults_eraser-class.html#normalize,Method pygccxml.declarations.pattern_parser.parser_t.normalize()=pygccxml.declarations.pattern_parser.parser_t-class.html#normalize,Function pygccxml.declarations.templates.normalize()=pygccxml.declarations.templates-module.html#normalize"><a title="pygccxml.declarations.container_traits.defaults_eraser.normalize
+pygccxml.declarations.pattern_parser.parser_t.normalize
+pygccxml.declarations.templates.normalize" class="py-name" href="#" onclick="return doclink('link-31', 'normalize', 'link-31');">normalize</a></tt><tt class="py-op">(</tt> <tt id="link-32" class="py-name"><a title="pygccxml.declarations.cpptypes.type_t.decl_string
+pygccxml.declarations.declaration.declaration_t.decl_string" class="py-name" href="#" onclick="return doclink('link-32', 'decl_string', 'link-7');">decl_string</a></tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygccxml-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.language-binding.net">pygccxml</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Oct 20 09:00:26 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
