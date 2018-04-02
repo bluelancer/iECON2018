@@ -1,4 +1,4 @@
-// LTE core
+// LTE LENA
 #include <iostream>
 #include <ns3/core-module.h>
 #include <ns3/network-module.h>
@@ -13,10 +13,10 @@
 #include "ns3/ipv4-global-routing-helper.h"
 #include "ns3/ipv4-flow-classifier.h"
 
-// Animation Generator
+// Animation Generator--netanim
 #include "ns3/netanim-module.h"
 
-// Mobility Model
+// Mobility Model- trace
 #include "ns3/ns2-mobility-helper.h"
 #include <ns3/mobility-module.h>
 #include "ns3/flow-monitor-helper.h"
@@ -24,10 +24,10 @@
 #include "string"
 #include <iostream>
 
-// Vedio Streaming simulator
+// Video Streaming simulator-evaild
 #include "ns3/evalvid-client-server-helper.h"
 
-// Building fading model
+// Building fading model-tinyxml2
 #include <ns3/mobility-building-info.h>
 #include <ns3/buildings-propagation-loss-model.h>
 #include <ns3/building.h>
@@ -35,6 +35,12 @@
 #include <ns3/hybrid-buildings-propagation-loss-model.h>
 #include "ns3/oh-buildings-propagation-loss-model.h"
 
+#include "ns3/abort.h"
+#include "ns3/core-module.h"
+#include "ns3/fd-net-device-module.h"
+#include "ns3/internet-apps-module.h"
+#include "ns3/ipv4-static-routing-helper.h"
+#include "ns3/ipv4-list-routing-helper.h"
 
 
 
@@ -44,6 +50,13 @@ using namespace std;
 // Prints actual position and velocity when a course change event occurs
 
 NS_LOG_COMPONENT_DEFINE ("EvalvidLTEExample");
+
+static void
+PingRtt (std::string context, Time rtt)
+{
+  NS_LOG_UNCOND ("Received Response with RTT = " << rtt);
+}
+
 static void
 CourseChange (std::ostream *os, std::string foo, Ptr<const MobilityModel> mobility)
 {
@@ -109,6 +122,8 @@ int main (int argc, char *argv[])
 {
   std::string traceFile;
   std::string logFile;
+  std::string deviceName ("wlan0"); // Remote host interface
+  std::string remote ("173.194.34.51"); // example.com -- server destination ip addr
 
   // LogComponentEnable ("EvalvidClient", LOG_LEVEL_INFO);
   // LogComponentEnable ("EvalvidServer", LOG_LEVEL_INFO);
@@ -125,7 +140,17 @@ int main (int argc, char *argv[])
   cmd.AddValue ("nodeNum", "Number of nodes", nodeNum);
   cmd.AddValue ("duration", "Duration of Simulation", duration);
   cmd.AddValue ("logFile", "Log file", logFile);
+  cmd.AddValue ("deviceName", "Device name", deviceName);
+  cmd.AddValue ("remote", "Remote IP address (dotted decimal only please)", remote);
   cmd.Parse (argc,argv);
+
+  Ipv4Address remoteIp (remote.c_str ());
+  Ipv4Address localIp ("192.168.1.102");
+  Ipv4Mask localMask ("255.255.255.0");
+
+  GlobalValue::Bind ("SimulatorImplementationType", StringValue ("ns3::RealtimeSimulatorImpl"));
+  GlobalValue::Bind ("ChecksumEnabled", BooleanValue (true));
+
 
   // Check command line arguments
   if (traceFile.empty () || nodeNum <= 0 || duration <= 0 || logFile.empty ())
@@ -207,6 +232,9 @@ for (int i = 0; i< 200; i++)
   lteHelper->EnableMacTraces ();
   Ptr<PointToPointEpcHelper> epcHelper = CreateObject<PointToPointEpcHelper> ();
 
+  // EPC Emulation mode
+  // Ptr<EmuEpcHelper>  epcHelper = CreateObject<EmuEpcHelper> ();
+
   epcHelper->Initialize ();
 
   Config::SetDefault ("ns3::LteEnbPhy::TxPower", DoubleValue (100));
@@ -256,6 +284,14 @@ for (int i = 0; i< 200; i++)
   InternetStackHelper internet;
   internet.Install (remoteHostContainer);
   
+  NS_LOG_INFO ("Create Device");
+  EmuFdNetDeviceHelper emu;
+  emu.SetDeviceName (deviceName);
+  NetDeviceContainer devices = emu.Install (remoteHost);
+  Ptr<NetDevice> device = devices.Get (0);
+  device->SetAttribute ("Address", Mac48AddressValue (Mac48Address::Allocate ()));
+
+
   PointToPointHelper p2ph;
   p2ph.SetDeviceAttribute ("DataRate", DataRateValue (DataRate ("100Gb/s")));
   p2ph.SetDeviceAttribute ("Mtu", UintegerValue (1500));
@@ -327,6 +363,7 @@ for (int i = 0; i< 200; i++)
     }
 
   lteHelper->Attach (ueDevs, enbDevs.Get (0));
+  // side effects: 1) use idle mode cell selection, 2) activate default EPS bearer
 
   uint16_t dlPort = 1234;
   uint16_t ulPort = 2000;
@@ -457,6 +494,20 @@ for (int i = 0; i< 200; i++)
     DummyserverApps.Stop (Seconds (100.00));
   }
 
+  NS_LOG_INFO ("Create V4Ping Appliation");
+  Ptr<V4Ping> app = CreateObject<V4Ping> ();
+  app->SetAttribute ("Remote", Ipv4AddressValue (remoteIp));
+  app->SetAttribute ("Verbose", BooleanValue (true) );
+  remoteHost->AddApplication (app);
+  app->SetStartTime (Seconds (1.0));
+  app->SetStopTime (Seconds (21.0));
+
+  Names::Add ("app", app);
+
+  // Hook a trace to print something when the response comes back.
+  Config::Connect ("/Names/app/Rtt", MakeCallback (&PingRtt));
+
+  emu.EnablePcap ("emu-ping", device, true);
 
   // gnuplot
   string fileNameWithNoExtension = "TimeVSPacket lost ratio";
@@ -498,7 +549,7 @@ for (int i = 0; i< 200; i++)
   
   Simulator::Stop (Seconds (duration));
 
-  // // Radio environment map Helper
+  // Radio environment map Helper
   // Ptr<RadioEnvironmentMapHelper> remHelper = CreateObject<RadioEnvironmentMapHelper> ();
   // remHelper->SetAttribute ("ChannelPath", StringValue ("/ChannelList/1"));
   // remHelper->SetAttribute ("OutputFile", StringValue ("rem.out"));
@@ -518,8 +569,8 @@ for (int i = 0; i< 200; i++)
   
   // monitor->CheckForLostPackets ();
 
-  // Screen Print out
-  ThroughputMonitor (&flowmon_helper, monitor, dataset, Flow_Number);
+  // Command Line Print out
+  // ThroughputMonitor (&flowmon_helper, monitor, dataset, Flow_Number);
 
   // XML Output
   monitor->SerializeToXmlFile ("LTE", false, false);

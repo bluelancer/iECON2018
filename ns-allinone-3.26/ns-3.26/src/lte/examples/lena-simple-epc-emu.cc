@@ -98,6 +98,8 @@ main (int argc, char *argv[])
   Ptr<Node> remoteHost = remoteHostContainer.Get (0);
   InternetStackHelper internet;
   internet.Install (remoteHostContainer);
+  FdNetDeviceHelper fd;
+  NetDeviceContainer devices = fd.Install (remoteHostContainer);
 
   // Create the Internet
   PointToPointHelper p2ph;
